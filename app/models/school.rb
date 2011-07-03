@@ -3,7 +3,6 @@ class School < ActiveRecord::Base
   
   # validations
   validates :name, :presence => true, :uniqueness => true, :allow_nil => false
-  validates :default_password, :presence => true, :allow_nil => false
   
   default_scope where(['schools.is_active = ?', true]).order('schools.name')
 end
