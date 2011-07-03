@@ -211,7 +211,8 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
   # assign the scholar to both profiles
   default_scholar.assignments.create!(profile_id:starting_point_profile.id)
   #default_scholar.assignments.create!(profile_id:check_point_profile.id, assigned:Time.new)
-  
+
+if Rails.env.development?
   100.times do |i|
     name = Faker::Name.name
 
@@ -227,4 +228,5 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
     s.save!
     
     a = s.assignments.create!(profile_id:starting_point_profile.id)
+  end
 end
