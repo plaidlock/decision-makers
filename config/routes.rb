@@ -17,7 +17,7 @@ DecisionMakers::Application.routes.draw do
   # sessions
   get 'login' => 'sessions#new', :as => 'login'
   post 'login' => 'sessions#create', :as => 'login'
-  delete 'logout' => 'sessions#logout', :as => 'logout'
+  delete 'logout' => 'sessions#destroy', :as => 'logout'
   
   get 'profiles/:id' => 'profiles#show', :as => 'profile'
   post 'profiles/:id/submit' => 'profiles#submit', :as => 'submit_profile'
