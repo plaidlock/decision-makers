@@ -196,7 +196,6 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
   .
 =end
 
-if Rails.env.development?
   # create some klasses
   klass = Klass.create!(name:'Class of 2014', default_password:'spring2014')
   
@@ -228,5 +227,4 @@ if Rails.env.development?
     s.save!
     
     a = s.assignments.create!(profile_id:starting_point_profile.id)
-  end
 end
