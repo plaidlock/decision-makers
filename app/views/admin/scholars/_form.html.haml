@@ -1,0 +1,42 @@
+= form_for [:admin, @scholar] do |f|
+  %table
+    %tr
+      %th{:colspan => 2} Add Scholar
+    %tr
+      %td{:align => 'right'} choose class:
+      %td= f.select :klass_id, Klass.all.collect{|k| [k.name, k.id, :'data-password' => k.default_password]}, :include_blank => 'Select Class...'
+    %tr
+      %td{:align => 'right'} first name:
+      %td= f.text_field :first_name, :placeholder => 'Bill'
+    %tr
+      %td{:align => 'right'} last name:
+      %td= f.text_field :last_name, :placeholder => 'Jones'
+    %tr
+      %td{:align => 'right'} username:
+      %td= f.text_field :username, :placeholder => 'bjones'
+    %tr
+      %td{:align => 'right'} password:
+      %td= f.text_field :password
+    %tr
+      %td{:align => 'right'} birthdate:
+      %td= f.text_field :birthdate, :placeholder => '1/1/2011', :value => (@scholar.birthdate.strftime('%m/%d/%Y') unless @scholar.birthdate.blank?)
+    %tr
+      %td{:align => 'right'} grade:
+      %td= f.select :grade, Scholar::GRADES.invert, :include_blank => 'Select Grade...'
+    %tr
+      %td{:align => 'right'} school:
+      %td= f.select :school_id, School.all.collect{|s| [s.name, s.id]}, :include_blank => 'Select School...'
+    %tr
+      %td{:colspan => 2}= f.submit :class => 'button'
+
+:javascript  
+  $('#scholar_username').focus(function(){
+    var first_name = $('#scholar_first_name').val().toLowerCase();
+    var last_name = $('#scholar_last_name').val().toLowerCase();
+    $(this).val(first_name[0]+last_name);
+  });
+  
+  $('#scholar_klass_id').change(function(){
+    var password = $(this).find(':selected').data('password');
+    $('#scholar_password').val(password);
+  });

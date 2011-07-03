@@ -1,0 +1,25 @@
+%h1= @profile.name
+#profile_text= @profile.text.html_safe unless @profile.text.nil?
+
+= form_tag submit_profile_path(@profile) do
+  #snapshots
+    - @profile.snapshots.each do |snapshot|
+      .snapshot
+        = render :partial => 'tips', :locals => {:snapshot => snapshot}
+        %h1= snapshot.name
+        %h2= snapshot.subtitle
+        .snapshot_text= snapshot.text.html_safe
+      
+        - snapshot.grouped_questions.each_pair do |category, questions|
+          - if questions.first.is_codeable?
+            = render :partial => 'codeable_question', :locals => {:category => category, :questions => questions}
+          - else
+            = render :partial => 'uncodeable_question', :locals => {:questions => questions}
+
+  = submit_tag :submit, :class => 'button', :style => 'width: 100%;'
+
+:javascript
+  // call our custom javascript paginator
+  window.onload = function() {
+    paginateSnapshots();
+  }

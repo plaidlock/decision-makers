@@ -1,0 +1,20 @@
+%h1 All Scholars
+
+= link_to '[+] Add Scholar', new_admin_scholar_path
+
+= render 'search'
+
+%table.striped{:width => '100%'}
+  %tr
+    %th First Name
+    %th Last Name
+    %th Username
+    %th Class
+  - @scholars.each do |scholar|
+    %tr.clickable{:'data-href' => admin_scholar_path(scholar)}
+      %td= scholar.first_name
+      %td= scholar.last_name
+      %td= scholar.username
+      %td= scholar.klass.name
+
+= paginate(@scholars)

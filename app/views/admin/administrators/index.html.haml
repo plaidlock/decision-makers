@@ -1,0 +1,14 @@
+%h1 All Administrators
+= link_to '[+] Add Administrator', new_admin_administrator_path
+%p This page is a listing of all administrators in the system. They have the full roles to run reports and edit users/scholars.
+
+%table{:width => '100%'}
+  %tr
+    %th First Name
+    %th Last Name
+    %th Username
+  - @administrators.each do |administrator|
+    %tr.clickable{:'data-href' => admin_administrator_path(administrator)}
+      %td= administrator.first_name
+      %td= administrator.last_name
+      %td= administrator.username

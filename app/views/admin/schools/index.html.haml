@@ -1,0 +1,10 @@
+%h1 All Schools
+= link_to '[+] Add School', new_admin_school_path
+%p This is a listing of all schools in the system. You must create a school before you can add students to it.
+
+%table.striped{:width => '100%'}
+  %tr
+    %th Name
+  - @schools.each do |school|
+    %tr.clickable{:'data-href' => admin_school_path(school)}
+      %td= school.name

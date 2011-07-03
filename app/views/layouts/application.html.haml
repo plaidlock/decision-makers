@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Decision Makers
+    = stylesheet_link_tag %w(styles jquery-ui), :cache => true
+    = javascript_include_tag %w(jquery jquery-ui jquery-ujs application), :cache => true
+    = csrf_meta_tag
+    
+  %body
+    = render :partial => 'shared/nav'
+    = render :partial => 'admin/shared/nav' if current_user.is_a?(Administrator)
+    #wrapper
+      - flash.each do |flash_name, value|
+        %div{:class => flash_name}!= value
+      
+      = yield

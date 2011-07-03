@@ -1,0 +1,17 @@
+%h1 Login
+%h2 Please login to continue
+
+%p Through the course of the next few weeks, you will learn the skills to help you make better decisions!
+
+%p To begin your Journey, login with your username and password.
+
+= form_tag 'login', :method => :post do
+  %table{:style => 'margin: 0 auto;'}
+    %tr
+      %td{:width => '150'} Username:
+      %td= text_field_tag :username, params[:username], :style => 'width: 250px;'
+    %tr
+      %td Password:
+      %td= password_field_tag :password, nil, :style => 'width: 250px;'
+    %tr
+      %td{:colspan => 2}= submit_tag :login, :class => 'button', :style => 'width: 100%'

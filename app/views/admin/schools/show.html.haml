@@ -1,0 +1,10 @@
+%h1= "School :: #{@school.name}"
+= link_to '[~] Edit', edit_admin_school_path(@school)
+= link_to '[x] Destroy', admin_school_path(@school), :method => :delete, :confirm => "Are you sure you want to delete #{@school.name}? This action cannot be undone!"
+
+%table
+  %tr
+    %th Name
+    %td= @school.name
+    
+= link_to 'Show all Schools', admin_schools_path

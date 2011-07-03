@@ -1,0 +1,27 @@
+%h1 Administrator's Home Page
+%p Below is a list of recently completed Starting Point Profile and recently completed Check Point Profiles. Click on the name of a scholar to code the information for his or her profile.
+
+%div.left{:style => 'width:450px'}
+  %table{:width => '100%'}
+    %tr
+      %th{:align => 'center'} Recently Completed SPP
+    - unless @recent_spp.empty?
+      - @recent_spp.each do |spp|
+        %tr
+          %td= link_to spp.scholar.name, nil
+    - else
+      %tr
+        %td{:align => 'center'} No recent SPPs
+
+%div.right{:style => 'width:450px'}
+  %table{:width => '100%'}
+    %tr
+      %th{:align => 'center'} Recently Completed CPP
+    - unless @recent_cpp.empty?
+      - @recent_cpp.each do |cpp|
+        %tr
+          %td= link_to cpp.scholar.name, nil
+    - else
+      %tr
+        %td{:align => 'center'} No recent CPPs
+      

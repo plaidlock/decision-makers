@@ -1,0 +1,7 @@
+%table.uncodeable_question{:style => 'width: 100%;'}
+  - questions.each do |question|
+    %tr
+      %td
+        %strong= question.question.html_safe
+      %td{:align => 'right'}
+        = select_tag "questions[#{question.id}]", options_for_select(Question::NON_CODEABLE_OPTIONS)

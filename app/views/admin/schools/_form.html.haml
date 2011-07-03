@@ -1,0 +1,7 @@
+= form_for [:admin, @school] do |f|
+  %table
+    %tr
+      %th Name
+      %td= f.text_field :name
+    %tr
+      %td{:colspan => 2}= f.submit :class => 'button'

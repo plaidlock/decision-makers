@@ -1,0 +1,6 @@
+- unless snapshot.tips.empty?
+  #tips
+    %h3 Tips
+    - snapshot.tips.each do |tip|
+      %h4= tip.title
+      %p= tip.content.html_safe

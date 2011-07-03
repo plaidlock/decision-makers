@@ -1,0 +1,40 @@
+%h1= "#{@profile.name} :: #{@scholar.name}"
+
+%table
+  %tr
+    %th{:align => 'right'} name:
+    %td= "#{@scholar.name}"
+  %tr
+    %th{:align => 'right'} username:
+    %td= @scholar.username
+  %tr
+    %th{:align => 'right'} birthdate:
+    %td= "#{@scholar.birthdate} (#{@scholar.age})"
+  %tr
+    %th{:align => 'right'} grade:
+    %td= "#{Scholar::GRADES[@scholar.grade.to_s.to_sym]} (#{@scholar.grade})"
+  %tr
+    %th{:align => 'right'} school:
+    %td= link_to @scholar.school.name, admin_school_path(@scholar.school)
+
+- if @assignment.is_completed?
+  = form_tag admin_scholar_profile_code_path(@scholar, @profile) do
+    #snapshots
+      - special = true
+      - @profile.snapshots.each do |snapshot|
+        .snapshot{:style => 'display:block;'}
+          %h1= snapshot.name
+          %h2= snapshot.subtitle
+          %table.striped{:width => '100%'}
+            %tr
+              %th Scholar's Response
+              %th Code
+            - snapshot.questions.each do |question|
+              - if question.is_codeable?
+                = render :partial => 'codeable_question', :locals => { :question => question, :scholar => @scholar, :special => special }
+              - else
+                = render :partial => 'uncodeable_question', :locals => { :question => question, :scholar => @scholar }
+              - special = false
+      = submit_tag :submit, :class => 'button', :style => 'width: 100%;'
+- else
+  %div.flash.alert= "Warning! This profile has not been completed yet!"

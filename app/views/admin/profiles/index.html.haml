@@ -1,0 +1,13 @@
+%h1= "Recent #{@profile.name}s"
+%p This is a listing of all starting point profiles that have recently been completed. If you are looking for a specific Starting Point Profile, <a href="#{admin_scholars_path}">search for the Scholar</a>.
+
+%table.striped{:width => '100%'}
+  %tr
+    %th Student
+    %th Completed
+    %th
+  - @assignments.each do |assignment|
+    %tr
+      %td= link_to assignment.scholar.name, admin_scholar_path(assignment.scholar)
+      %td= assignment.completed.strftime('%m/%d/%Y')
+      %td= link_to 'Show', admin_scholar_profile_path(assignment.scholar, assignment.profile)

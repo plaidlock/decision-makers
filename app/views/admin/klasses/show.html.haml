@@ -1,0 +1,13 @@
+%h1= "Class :: #{@klass.name}"
+= link_to '[~] Edit', edit_admin_klass_path(@klass)
+= link_to '[x] Destroy', admin_klass_path(@klass), :method => :delete, :confirm => "Are you sure you want to delete #{@klass.name}? This action cannot be undone!"
+
+%table
+  %tr
+    %th Name
+    %td= @klass.name
+  %tr
+    %th Default Password
+    %td= @klass.default_password
+
+= link_to 'Show all Classes', admin_klasses_path

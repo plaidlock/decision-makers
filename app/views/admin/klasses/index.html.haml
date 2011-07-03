@@ -1,0 +1,12 @@
+%h1 All Classes
+= link_to '[+] Add Class', new_admin_klass_path
+%p This is a listing of all schools in the system. You must create a school before you can add students to it.
+
+%table.striped{:width => '100%'}
+  %tr
+    %th Name
+    %th Default Password
+  - @klasses.each do |klass|
+    %tr.clickable{:'data-href' => admin_klass_path(klass)}
+      %td= klass.name
+      %td= klass.default_password
