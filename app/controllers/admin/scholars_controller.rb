@@ -1,7 +1,15 @@
 class Admin::ScholarsController < Admin::ApplicationController 
   def index
-    page = (params[:page] || 0).to_i
-    @scholars = Scholar.page(params[:page] || 0).per(25)
+    respond_to do |format|
+      format.html {
+        page = (params[:page] || 0).to_i
+        @scholars = Scholar.page(params[:page] || 0).per(25)        
+      }
+      format.json {
+        @scholars = Scholar.select('users.id, users.first_name, users.last_name').where(:klass_id => params[:class_id])
+        render :json => @scholars
+      }
+    end
   end
   
   def search

@@ -1,8 +1,9 @@
-%h1 All Schools
-= link_to '[+] Add School', new_admin_school_path
-%p This is a listing of all schools in the system. You must create a school before you can add students to it.
+%h2 All Schools
 
-%table.striped{:width => '100%'}
+%ul#actions
+  %li= link_to '+ Add School', new_admin_school_path, :class => 'fancybox'
+
+%table.striped.clickable{:width => '100%'}
   %tr
     %th Name
   - @schools.each do |school|

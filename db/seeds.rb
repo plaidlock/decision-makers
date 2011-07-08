@@ -1,4 +1,11 @@
-#tips
+# question categories
+rwa = QuestionCategory.create!(name:'Relations with Adults', color:'#003366')
+aar = QuestionCategory.create!(name:'Agency and Responsibility', color:'#993333')
+aam = QuestionCategory.create!(name:'Attitudes and Motivation', color:'#ffff9a')
+pdm = QuestionCategory.create!(name:'Planning and Decision Making', color:'#b3c98b')
+dwo = QuestionCategory.create!(name:'Dealing with Others', color:'#303b13')
+
+# tips
 specifics = Tip.create!(title:'Specifics', content:'details and actions')
 reasons = Tip.create!(title:'Reasons', content:'"since... so... because..."')
 rivals = Tip.create!(title:'Rivals', content:'"someone might say..."')
@@ -6,7 +13,7 @@ roadblocks = Tip.create!(title:'Roadblocks', content:'conditions: "if... then"<b
 
 # starting point profile
 starting_point_profile = Profile.create!(name:'Starting Point Profile', text:'
-  <h1>Where are you going in your life?</h1> 
+  <h3>Where are you going in your life?</h3>
   <p>
     Who do you want to be? And how are you going to get there? The DECISION MAKERS project will help you figure out how to move toward the person you want to be.
   </p>
@@ -14,7 +21,7 @@ starting_point_profile = Profile.create!(name:'Starting Point Profile', text:'
     The special thing about this plan is that it lets you imagine your journey not as <strong>other people</strong> see it, but as <strong>you</strong> see it yourself. Let\'s start at your starting point.
   </p>
 
-  <h2>Where are you right now?</h2> 
+  <h3>Where are you right now?</h3>
   <p>
     This Starting Point Profile will let you take 4 snapshots of your current situation:
   </p>
@@ -135,28 +142,28 @@ snapshot3 = starting_point_profile.snapshots.create!(name:'Snapshot 3', subtitle
   </ul>
 ')
 
-  snapshot3.questions.create!(question:'I am connected to places (like a church or a club) where a young person can play a useful role in their community.', display_order:1)
-  snapshot3.questions.create!(question:'Given the way my family works, I can always turn to my family as a positive resource for good advice and help.', display_order:2)
-  snapshot3.questions.create!(question:'I am well connected to two or more adults who have strong experiences with a career and post-secondary education and who will support me.', display_order:3)
-  snapshot3.questions.create!(question:'I am connected to my community in service to others (for at least an hour per week).', display_order:4)
-  snapshot3.questions.create!(question:'I can easily name three or more adults (not parents) who talk with me to advise and encourage me, both now and in the future.', display_order:5)
-  snapshot3.questions.create!(question:'In conversations with adults, I find I can communicate my goals and my strengths in ways that they can understand.', display_order:6)
-  snapshot3.questions.create!(question:'I consider myself motivated when it comes to school performance even when a subject doesn\'t interest me.', display_order:7)
-  snapshot3.questions.create!(question:'I go after opportunities to learn new knowledge or develop skills even when they\'re not required.', display_order:8)
-  snapshot3.questions.create!(question:'When I look at the roads I am taking, I sense my life has a clear purpose.', display_order:9)
-  snapshot3.questions.create!(question:'I receive lots of encouragement from parents and teachers who have high expectations for me.', display_order:10)
-  snapshot3.questions.create!(question:'I have shown that I am a person who can take on responsibility and follow through.', display_order:11)
-  snapshot3.questions.create!(question:'When I face problems at school or at work, I know some good strategies for communicating with people so I know I can handle a situation by discussion or explaining.', display_order:12)
-  snapshot3.questions.create!(question:'I have a history of making good choices when it comes to alcohol, drugs, and sex.', display_order:13)
-  snapshot3.questions.create!(question:'I have a history of handling negative peer pressure especially in difficult situations.', display_order:14)
-  snapshot3.questions.create!(question:'I have had successful experiences working with people at school or work who are different from me - because of their race, neighborhood, income or social background.', display_order:15)
-  snapshot3.questions.create!(question:'When someone challenges my ideas or beliefs, I feel able to stand up for my ideas in front of others, to do what I think is right.', display_order:16)
-  snapshot3.questions.create!(question:'When I face hard choices, I normally think through all my options and possible outcomes rather than waiting to see what happens.', display_order:17)
-  snapshot3.questions.create!(question:'I do a lot of planning about my future and the specific things I need to do now.', display_order:18)
-  snapshot3.questions.create!(question:'When I enter unfamiliar situations (where people have new expectations of me or confusing ways of explaining things), I am good at finding out all the things I need to know.', display_order:19)
-  snapshot3.questions.create!(question:'I feel like I have control over things that are happening in my own life at home, school, work.', display_order:20)
-  snapshot3.questions.create!(question:'When I look at my situation and the choices I have made this past year, I would call myself a good decision maker.', display_order:21)
-  snapshot3.questions.create!(question:'As for my personal future, I have reasons to feel quite optimistic.', display_order:22)
+  snapshot3.questions.create!(question:'I am connected to places (like a church or a club) where a young person can play a useful role in their community.', display_order:1, question_category:aar)
+  snapshot3.questions.create!(question:'Given the way my family works, I can always turn to my family as a positive resource for good advice and help.', display_order:2, question_category:rwa)
+  snapshot3.questions.create!(question:'I am well connected to two or more adults who have strong experiences with a career and post-secondary education and who will support me.', display_order:3, question_category:rwa)
+  snapshot3.questions.create!(question:'I am connected to my community in service to others (for at least an hour per week).', display_order:4, question_category:aar)
+  snapshot3.questions.create!(question:'I can easily name three or more adults (not parents) who talk with me to advise and encourage me, both now and in the future.', display_order:5, question_category:rwa)
+  snapshot3.questions.create!(question:'In conversations with adults, I find I can communicate my goals and my strengths in ways that they can understand.', display_order:6, question_category:aar)
+  snapshot3.questions.create!(question:'I consider myself motivated when it comes to school performance even when a subject doesn\'t interest me.', display_order:7, question_category:aam)
+  snapshot3.questions.create!(question:'I go after opportunities to learn new knowledge or develop skills even when they\'re not required.', display_order:8, question_category:aam)
+  snapshot3.questions.create!(question:'When I look at the roads I am taking, I sense my life has a clear purpose.', display_order:9, question_category:aam)
+  snapshot3.questions.create!(question:'I receive lots of encouragement from parents and teachers who have high expectations for me.', display_order:10, question_category:rwa)
+  snapshot3.questions.create!(question:'I have shown that I am a person who can take on responsibility and follow through.', display_order:11, question_category:aar)
+  snapshot3.questions.create!(question:'When I face problems at school or at work, I know some good strategies for communicating with people so I know I can handle a situation by discussion or explaining.', display_order:12, question_category:pdm)
+  snapshot3.questions.create!(question:'I have a history of making good choices when it comes to alcohol, drugs, and sex.', display_order:13, question_category:pdm)
+  snapshot3.questions.create!(question:'I have a history of handling negative peer pressure especially in difficult situations.', display_order:14, question_category:dwo)
+  snapshot3.questions.create!(question:'I have had successful experiences working with people at school or work who are different from me - because of their race, neighborhood, income or social background.', display_order:15, question_category:dwo)
+  snapshot3.questions.create!(question:'When someone challenges my ideas or beliefs, I feel able to stand up for my ideas in front of others, to do what I think is right.', display_order:16, question_category:dwo)
+  snapshot3.questions.create!(question:'When I face hard choices, I normally think through all my options and possible outcomes rather than waiting to see what happens.', display_order:17, question_category:pdm)
+  snapshot3.questions.create!(question:'I do a lot of planning about my future and the specific things I need to do now.', display_order:18, question_category:pdm)
+  snapshot3.questions.create!(question:'When I enter unfamiliar situations (where people have new expectations of me or confusing ways of explaining things), I am good at finding out all the things I need to know.', display_order:19, question_category:dwo)
+  snapshot3.questions.create!(question:'I feel like I have control over things that are happening in my own life at home, school, work.', display_order:20, question_category:aam)
+  snapshot3.questions.create!(question:'When I look at my situation and the choices I have made this past year, I would call myself a good decision maker.', display_order:21, question_category:pdm)
+  snapshot3.questions.create!(question:'As for my personal future, I have reasons to feel quite optimistic.', display_order:22, question_category:aam)
 
 
 
@@ -179,6 +186,9 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
 
   snapshot4.tips = [specifics, reasons, rivals, roadblocks]
 
+  # default admin
+  default_admin = Administrator.create!(username:'admin', password:'test', first_name:'Admin', last_name:'User')
+
 
 =begin
   .
@@ -196,37 +206,59 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
   .
 =end
 
-  # create some klasses
-  klass = Klass.create!(name:'Class of 2014', default_password:'spring2014')
-  
-  # default admin
-  default_admin = Administrator.create!(username:'admin', password:'test', first_name:'Admin', last_name:'User')
-  
-  # make a default school
-  default_school = School.create!(name:'Fox Chapel')
-
-  # make a default scholar
-  default_scholar = Scholar.create!(school_id:default_school.id, klass_id:klass.id, username:'user', password:'test', first_name:'Default', last_name:'Scholar', birthdate:Time.new, grade:11)
-
-  # assign the scholar to both profiles
-  default_scholar.assignments.create!(profile_id:starting_point_profile.id)
-  #default_scholar.assignments.create!(profile_id:check_point_profile.id, assigned:Time.new)
-
 if Rails.env.development?
-  100.times do |i|
+  # make a default school
+  School.create!(name:'Fox Chapel')
+  School.create!(name:'Swickley')
+  
+  # create some klasses
+  Klass.create!(name:'Class of 2014', default_password:'spring2014')
+  Klass.create!(name:'Class of 2015', default_password:'spring2015')
+  Klass.create!(name:'Class of 2016', default_password:'spring2016')
+  Klass.create!(name:'Class of 2017', default_password:'spring2017')
+  Klass.create!(name:'Class of 2018', default_password:'spring2018')
+  Klass.create!(name:'Class of 2019', default_password:'spring2019')
+  Klass.create!(name:'Class of 2020', default_password:'spring2020')
+  
+  # make a default scholar
+  default_scholar = Scholar.create!(school:School.find(1), klass:Klass.find(1), username:'user', password:'test', first_name:'Default', last_name:'Scholar', birthdate:Time.new, grade:11)
+  
+  70.times do |i|
     name = Faker::Name.name
 
     s = Scholar.new
-    s.school_id = default_school.id
-    s.klass_id = klass.id
+    s.school = School.find(rand(2)+1)
+    s.klass = Klass.find((i%7)+1)
     s.username = Faker::Internet.user_name(name)
-    s.password = klass.default_password
+    s.password = 'test'
     s.first_name = name.split(' ')[0]
     s.last_name = name.split(' ')[1]
     s.birthdate = Time.new
     s.grade = 10
     s.save!
     
-    a = s.assignments.create!(profile_id:starting_point_profile.id)
+    # now complete all, code half of the starting point profiles
+    starting_point_profile.questions.each do |question|
+      if question.is_codeable?
+        question.responses.create!(scholar_id:s.id, question_id:question.id, response:Faker::Lorem.paragraphs(rand(2)+1))
+      else
+        question.responses.create!(scholar_id:s.id, question_id:question.id, response:rand(3)+1)
+      end
+    end
+    s.assignments.find_by_profile_id(starting_point_profile.id).update_attributes(:completed => Time.now)
+    
+    if i%2 == 0
+      starting_point_profile.questions.each_with_index do |question, i|
+        if question.is_codeable?
+          if i == 0
+            question.response_from(s).update_attributes(:code => 6.times.collect{|i| rand(5)}.join(',').to_s)
+          else
+            question.response_from(s).update_attributes(:code => rand(3)+1)
+          end
+        end
+      end
+      
+      s.assignments.find_by_profile_id(starting_point_profile.id).update_attributes(:is_coded => true)
+    end
   end
 end

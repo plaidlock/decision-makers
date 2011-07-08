@@ -1,8 +1,6 @@
 = form_for [:admin, @scholar] do |f|
   %table
     %tr
-      %th{:colspan => 2} Add Scholar
-    %tr
       %td{:align => 'right'} choose class:
       %td= f.select :klass_id, Klass.all.collect{|k| [k.name, k.id, :'data-password' => k.default_password]}, :include_blank => 'Select Class...'
     %tr

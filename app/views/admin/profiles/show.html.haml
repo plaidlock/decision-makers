@@ -1,20 +1,20 @@
-%h1= "#{@profile.name} :: #{@scholar.name}"
+%h2= "#{@profile.name} :: #{@scholar.name}"
 
-%table
+%table.striped-right
   %tr
-    %th{:align => 'right'} name:
+    %th{:width => 100} name
     %td= "#{@scholar.name}"
   %tr
-    %th{:align => 'right'} username:
+    %th username
     %td= @scholar.username
   %tr
-    %th{:align => 'right'} birthdate:
+    %th birthdate
     %td= "#{@scholar.birthdate} (#{@scholar.age})"
   %tr
-    %th{:align => 'right'} grade:
+    %th grade
     %td= "#{Scholar::GRADES[@scholar.grade.to_s.to_sym]} (#{@scholar.grade})"
   %tr
-    %th{:align => 'right'} school:
+    %th school
     %td= link_to @scholar.school.name, admin_school_path(@scholar.school)
 
 - if @assignment.is_completed?
@@ -23,8 +23,8 @@
       - special = true
       - @profile.snapshots.each do |snapshot|
         .snapshot{:style => 'display:block;'}
-          %h1= snapshot.name
-          %h2= snapshot.subtitle
+          %h2= snapshot.name
+          %h3= snapshot.subtitle
           %table.striped{:width => '100%'}
             %tr
               %th Scholar's Response

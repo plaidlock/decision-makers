@@ -1,15 +1,16 @@
-%h1 All Scholars
-
-= link_to '[+] Add Scholar', new_admin_scholar_path
-
 = render 'search'
 
-%table.striped{:width => '100%'}
+%h2 All Scholars
+
+%ul#actions
+  %li= link_to '+ Add Scholar', new_admin_scholar_path, :class => 'fancybox'
+
+%table.striped.clickable{:width => '100%'}
   %tr
-    %th First Name
-    %th Last Name
+    %th{:width => '175'} First Name
+    %th{:width => '225'} Last Name
     %th Username
-    %th Class
+    %th{:width => '150'} Class
   - @scholars.each do |scholar|
     %tr.clickable{:'data-href' => admin_scholar_path(scholar)}
       %td= scholar.first_name

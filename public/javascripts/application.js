@@ -1,4 +1,10 @@
 $(function(){
+  $('.fancybox').fancybox({
+    padding: 20,
+    scrolling: 'no',
+    overlayOpacity: 0.3
+  });
+  
   $('tr.clickable').click(function(){
     window.location.href = $(this).data('href');
   });
@@ -28,7 +34,17 @@ $(function(){
       window.location.href = url;
     }
   });
+  
+  addNavCurrentClasses();
 });
+
+function addNavCurrentClasses() {
+  $.each($('#public_nav li a, #admin_nav li a'), function(i, value){
+    if(value.getAttribute('href') === document.location.pathname) {
+      value.className += 'active';
+    }
+  });
+}
 
 function paginateSnapshots() {
   var snapshots = $('#snapshots').find('.snapshot');

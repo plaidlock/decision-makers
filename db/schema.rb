@@ -10,11 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110701031614) do
+ActiveRecord::Schema.define(:version => 20110707204904) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "scholar_id"
     t.integer  "profile_id"
+    t.boolean  "is_coded",   :default => false
     t.datetime "assigned"
     t.datetime "started"
     t.datetime "completed"
@@ -37,16 +38,25 @@ ActiveRecord::Schema.define(:version => 20110701031614) do
 
   add_index "profiles", ["name"], :name => "index_profiles_on_name"
 
+  create_table "question_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", :force => true do |t|
     t.integer "snapshot_id"
+    t.integer "question_category_id"
     t.text    "question"
     t.string  "category"
     t.integer "display_order"
-    t.boolean "is_codeable",   :default => false
+    t.boolean "is_codeable",          :default => false
   end
 
   add_index "questions", ["category"], :name => "index_questions_on_category"
   add_index "questions", ["display_order"], :name => "index_questions_on_display_order"
+  add_index "questions", ["question_category_id"], :name => "index_questions_on_question_category_id"
   add_index "questions", ["snapshot_id"], :name => "index_questions_on_snapshot_id"
 
   create_table "responses", :force => true do |t|

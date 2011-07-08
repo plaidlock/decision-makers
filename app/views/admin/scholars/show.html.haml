@@ -1,48 +1,52 @@
-%h1= "Scholar :: #{@scholar.name}"
+= render 'admin/scholars/search'
 
-= link_to '[~] Edit', edit_admin_scholar_path(@scholar)
-= link_to '[x] Delete', admin_scholar_path(@scholar), :method => :delete, :confirm => "Are you sure you want to delete #{@scholar.name}? This action cannot be undone!"
+%h2= "Scholar :: #{@scholar.name}"
 
-.left
-  %table
-    %tr
-      %th class:
-      %td= link_to @scholar.klass.name, admin_klasses_path(@scholar.klass)
-    %tr
-      %th first name:
-      %td= @scholar.first_name
-    %tr
-      %th last name:
-      %td= @scholar.last_name
-    %tr
-      %th username:
-      %td= @scholar.username
-    %tr
-      %th password:
-      %td= @scholar.password
-    %tr
-      %th birthdate:
-      %td= "#{@scholar.birthdate} #{@scholar.age}"
-    %tr
-      %th grade:
-      %td= Scholar::GRADES[@scholar.grade.to_s.to_sym]
-    %tr
-      %th school:
-      %td= link_to @scholar.school.name, admin_schools_path(@scholar.school)
+%ul#actions
+  %li= link_to '&laquo; All Scholars'.html_safe, admin_scholars_path
+  %li= link_to '# Edit', edit_admin_scholar_path(@scholar)
+  %li= link_to 'x Delete', admin_scholar_path(@scholar), :method => :delete, :confirm => "Are you sure you want to delete #{@scholar.name}? This action cannot be undone!"
 
-.right
-  %table
-    %tr
-      %th{:colspan => 2} Starting Point Profile
-    %tr
-      %td= link_to 'Starting Point Profile', admin_scholar_profile_path(@scholar, @spp.profile)
-      %td= @spp.status
+%table{:cellpadding => 25}
+  %tr
+    %td{:align => 'center', :width => '50%'}
+      %table.striped-right
+        %tr{:rowspan => 2}
+          %th class:
+          %td= link_to @scholar.klass.name, admin_klass_path(@scholar.klass)
+        %tr
+          %th first name:
+          %td= @scholar.first_name
+        %tr
+          %th last name:
+          %td= @scholar.last_name
+        %tr
+          %th username:
+          %td= @scholar.username
+        %tr
+          %th password:
+          %td= @scholar.password
+        %tr
+          %th birthdate:
+          %td= "#{@scholar.birthdate} #{@scholar.age}"
+        %tr
+          %th grade:
+          %td= Scholar::GRADES[@scholar.grade.to_s.to_sym]
+        %tr
+          %th school:
+          %td= link_to @scholar.school.name, admin_schools_path(@scholar.school)
+    %td
+      %table.striped
+        %tr
+          %th{:colspan => 2} Starting Point Profile
+        %tr
+          %td= link_to 'Starting Point Profile', admin_scholar_profile_path(@scholar, @spp.profile)
+          %td{:width => '10'}= @spp.status.html_safe
 
-  / %table
-  /   %tr
-  /     %th{:colspan => 2} Check Point Profile
-  /   %tr
-  /     %td= link_to 'Check Point Profile', admin_profile_path(@cpp.profile_id)
-  /     %td= @cpp.status
+      %table.striped{:style => 'margin-top: 45px;'}
+        %tr
+          %th{:colspan => 2} Check Point Profile
+        %tr
+          /%td= link_to 'Check Point Profile', admin_scholar_profile_path(@scholar, @cpp.profile)
+          %td= @cpp.status
   
-= link_to 'Show All Scholars', admin_scholars_path

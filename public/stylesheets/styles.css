@@ -3,7 +3,7 @@
   v2.0 | 20110126
   License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -35,13 +35,64 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'Ostrich Condensed';
+  src: url("/fonts/ostrich-light-webfont.eot");
+  src: url("/fonts/ostrich-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-light-webfont.woff") format("woff"), url("/fonts/ostrich-light-webfont.ttf") format("truetype"), url("/fonts/ostrich-light-webfont.svg#OstrichSansCondensedLight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Medium';
+  src: url("/fonts/ostrich-regular-webfont.eot");
+  src: url("/fonts/ostrich-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-regular-webfont.woff") format("woff"), url("/fonts/ostrich-regular-webfont.ttf") format("truetype"), url("/fonts/ostrich-regular-webfont.svg#OstrichSansMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Bold';
+  src: url("/fonts/ostrich-bold-webfont.eot");
+  src: url("/fonts/ostrich-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-bold-webfont.woff") format("woff"), url("/fonts/ostrich-bold-webfont.ttf") format("truetype"), url("/fonts/ostrich-bold-webfont.svg#OstrichSansBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Black';
+  src: url("/fonts/ostrich-black-webfont.eot");
+  src: url("/fonts/ostrich-black-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-black-webfont.woff") format("woff"), url("/fonts/ostrich-black-webfont.ttf") format("truetype"), url("/fonts/ostrich-black-webfont.svg#OstrichSansBlack") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Rounded';
+  src: url("/fonts/ostrich-rounded-webfont.eot");
+  src: url("/fonts/ostrich-rounded-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-rounded-webfont.woff") format("woff"), url("/fonts/ostrich-rounded-webfont.ttf") format("truetype"), url("/fonts/ostrich-rounded-webfont.svg#OstrichSansRoundedMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Dashed';
+  src: url("/fonts/ostrich-dashed-webfont.eot");
+  src: url("/fonts/ostrich-dashed-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-dashed-webfont.woff") format("woff"), url("/fonts/ostrich-dashed-webfont.ttf") format("truetype"), url("/fonts/ostrich-dashed-webfont.svg#OstrichSansDashedMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Scribble';
+  src: url("/fonts/ArchitectsDaughter-webfont.eot");
+  src: url("/fonts/ArchitectsDaughter-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ArchitectsDaughter-webfont.woff") format("woff"), url("/fonts/ArchitectsDaughter-webfont.ttf") format("truetype"), url("/fonts/ArchitectsDaughter-webfont.svg#ArchitectsDaughterRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 html, body {
-  height: 100%; }
+  height: 100%;
+  min-width: 1000px; }
 
 body {
-  background: #1b325f;
-  color: #1b325f;
-  font: 16px/20px verdana, sans-serif; }
+  background: #e6e1cd;
+  color: #665c53;
+  font-family: verdana, sans-serif;
+  font-size: 16px; }
 
 strong {
   font-weight: bold; }
@@ -49,48 +100,106 @@ strong {
 em {
   font-variant: italic; }
 
-h1 {
-  color: #3a89c9;
-  font-size: 26px;
-  padding: 5px 0; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ostrich Black'; }
 
 h2 {
-  color: #f26c4f;
-  font-size: 22px; }
+  color: #cc5b14;
+  font-size: 36px;
+  margin: 10px 0 5px 0;
+  padding: 5px 0; }
 
 h3 {
+  color: #cc5b14;
+  font-size: 24px;
+  margin: 40px 0 0 0; }
+
+h4 {
   font-size: 18px;
   font-weight: bold;
   margin-top: 25px; }
 
 p {
-  margin-top: 15px; }
+  margin-top: 15px;
+  line-height: 22px; }
 
 a, a:visited {
-  color: #f26c4f;
+  color: #71b3a5;
   text-decoration: none; }
 
 a:hover {
+  color: #a1ccae;
   text-decoration: underline; }
 
 table {
-  background: #ffffff;
-  border: 1px solid #1b325f; }
-  table tr.clickable {
-    cursor: pointer !important; }
-    table tr.clickable:hover td {
-      background: #ffffdd !important; }
-  table tr th, table tr td {
-    padding: 10px; }
-  table tr th {
-    background: #1b325f;
-    color: #fff; }
+  width: 100%; }
+  table tr {
+    vertical-align: top; }
+  table a, table a:visited {
+    color: #cc5b14; }
+    table a:hover, table a:active, table a:visited:hover, table a:visited:active {
+      color: #cc5b14; }
+
+table.striped {
+  border-bottom: 1px solid #665c53; }
+  table.striped th {
+    background: #665c53;
+    border: 1px solid #665c53;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    padding: 15px;
+    text-transform: uppercase;
+    border-right: 1px solid #f0f2e5; }
+    table.striped th:last-child {
+      border-right: 1px solid #665c53; }
+  table.striped td {
+    padding: 15px;
+    border-left: 1px solid #665c53;
+    border-right: 1px solid #665c53; }
   table.striped tr:nth-child(odd) td {
-    background: #e9f2f9; }
+    background: #fff; }
+  table.striped tr:nth-child(even) td {
+    background: #e6e1cd; }
+
+table.striped-right {
+  border-bottom: 1px solid #665c53; }
+  table.striped-right tr th {
+    text-align: right;
+    background: #665c53;
+    border: 1px solid #665c53;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    padding: 15px;
+    text-transform: uppercase;
+    border-left: 1px solid #665c53;
+    border-bottom: 1px solid #f0f2e5; }
+  table.striped-right tr:last-child th {
+    border-bottom: 1px solid #665c53; }
+  table.striped-right td {
+    padding: 15px;
+    border-bottom: 1px solid #665c53;
+    border-top: 1px solid #665c53;
+    border-right: 1px solid #665c53; }
+  table.striped-right tr:nth-child(odd) td {
+    background: #fff; }
+  table.striped-right tr:nth-child(even) td {
+    background: #e6e1cd; }
+
+table.clickable tr:hover td {
+  cursor: pointer;
+  font-weight: bold; }
+
+table.overview {
+  background: #fff; }
+  table.overview tr {
+    margin: 20px 0;
+    padding: 20px; }
 
 div.section {
-  background: #e9f2f9;
-  border: 1px solid #9cc4e4;
+  background: #f0f2e5;
+  border: 1px solid #e6e1cd;
   padding: 10px;
   margin: 20px; }
 
@@ -114,21 +223,18 @@ ul.tick {
     background: url("../images/tick.png") no-repeat left center;
     padding: 3px 0 3px 24px; }
 
-input {
-  border: 1px solid #999;
-  padding: 8px 6px; }
-
-select {
-  background: #e9f2f9;
-  border: 1px solid #1b325f;
-  color: #1b325f;
-  cursor: pointer;
-  height: 25px; }
+input, select {
+  background: #f0f2e5;
+  border: 1px solid #665c53;
+  font-size: 16px;
+  min-width: 250px;
+  padding: 7px 10px; }
 
 textarea {
   font-size: 16px; }
 
 .clear {
+  height: 10px;
   clear: both; }
 
 .none {
@@ -143,15 +249,16 @@ textarea {
   margin-left: 20px; }
 
 .alert {
-  border: 1px solid #c00;
-  background: #ffeeee;
-  color: #a00;
+  border: 1px solid #c02525;
+  background: #e8c9bf;
+  color: #c02525;
   margin-bottom: 20px;
   padding: 10px; }
 
 .notice {
-  border: 1px solid #cc0;
-  background: #ffffee;
+  border: 1px solid #d9cd5d;
+  background: #f1f0c6;
+  color: #665c53;
   margin-bottom: 20px;
   padding: 10px; }
 
@@ -170,31 +277,150 @@ textarea {
   width: 48px; }
 
 #wrapper {
-  background: #fff;
+  background: #f0f2e5;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
   margin: 0 auto;
   min-height: 100%;
   padding: 20px;
-  width: 940px;
-  -webkit-box-shadow: 0 0 50px 10px black;
-  -moz-box-shadow: 0 0 50px 10px black;
-  box-shadow: 0 0 50px 10px black; }
+  width: 940px; }
+
+#header {
+  background: #665c53;
+  border-bottom: 5px solid #5b4f45;
+  line-height: 150px;
+  text-align: center;
+  width: 100%; }
+  #header h1 {
+    color: #71b3a5;
+    font-family: 'Ostrich Black';
+    font-size: 100px;
+    margin-bottom: -5px;
+    text-shadow: 3px 3px 0 #5b4f45; }
+    #header h1 span {
+      color: #a1ccae; }
+
+ul#public_nav {
+  background: #a1ccae;
+  padding: 0;
+  height: 50px;
+  position: relative;
+  margin: -27px auto 0 auto;
+  text-align: center;
+  width: 1000px;
+  -webkit-box-shadow: 0 3px 0 #cccccc;
+  -moz-box-shadow: 0 3px 0 #cccccc;
+  box-shadow: 0 3px 0 #cccccc; }
+  ul#public_nav:before {
+    background: url("/images/ribbon.png") no-repeat;
+    content: '';
+    display: block;
+    float: left;
+    height: 50px;
+    margin-left: -50px;
+    width: 50px;
+    -webkit-box-shadow: 0 3px 0 #cccccc;
+    -moz-box-shadow: 0 3px 0 #cccccc;
+    box-shadow: 0 3px 0 #cccccc; }
+  ul#public_nav li {
+    display: inline-block;
+    padding: 0;
+    margin: 0; }
+    ul#public_nav li a {
+      color: #5b4f45;
+      font-family: 'Ostrich Black';
+      font-size: 28px;
+      line-height: 60px;
+      padding: 0 30px;
+      margin: 0; }
+      ul#public_nav li a:hover {
+        color: #662d0a;
+        text-decoration: none; }
+  ul#public_nav:after {
+    background: url("/images/ribbon-mirror.png") no-repeat;
+    content: '';
+    display: block;
+    float: right;
+    height: 50px;
+    margin-right: -50px;
+    width: 50px;
+    -webkit-box-shadow: 0 3px 0 #cccccc;
+    -moz-box-shadow: 0 3px 0 #cccccc;
+    box-shadow: 0 3px 0 #cccccc; }
+
+ul#admin_nav {
+  margin: 10px 0 20px 0;
+  text-align: center;
+  width: 100%; }
+  ul#admin_nav li {
+    display: inline-block; }
+    ul#admin_nav li a {
+      color: #665c53;
+      font-family: 'Ostrich Rounded';
+      font-size: 20px;
+      padding: 10px 15px 5px 15px;
+      margin: 0; }
+      ul#admin_nav li a:hover {
+        color: #cc5b14;
+        text-decoration: none; }
+      ul#admin_nav li a.active {
+        background: #e6e1cd;
+        color: #cc5b14;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        behavior: url("./border-radius.htc"); }
+
+#search {
+  width: 300px;
+  margin: 10px auto; }
+  #search input {
+    background: #fff;
+    border: 1px solid #d1ccba;
+    font-size: 10px;
+    padding: 8px 6px;
+    width: 300px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url("./border-radius.htc"); }
+
+ul#actions {
+  float: right;
+  margin-top: -40px; }
+  ul#actions li {
+    display: inline-block; }
+    ul#actions li a {
+      color: #665c53;
+      font-family: 'Ostrich Rounded';
+      font-size: 20px;
+      padding: 10px 15px 5px 15px;
+      margin: 0; }
+      ul#actions li a:hover {
+        background: #e6e1cd;
+        color: #cc5b14;
+        text-decoration: none;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        behavior: url("./border-radius.htc"); }
 
 #snapshots .snapshot {
-  background: #e9f2f9;
-  border: 1px solid #9cc4e4;
+  background: #f0f2e5;
+  border: 1px solid #e6e1cd;
   display: none;
   padding: 30px;
   margin: 40px; }
   #snapshots .snapshot table.rating {
     margin: 20px 0; }
     #snapshots .snapshot table.rating tr td {
-      background: #ffd89e;
-      border: 1px solid #f26c4f;
-      color: #793627;
+      background: #ffb628;
+      border: 1px solid #cc5b14;
+      color: #662d0a;
       padding: 15px; }
   #snapshots .snapshot #tips {
-    background: #ffd89e;
-    border: 1px solid #f26c4f;
+    background: #ffb628;
+    border: 1px solid #cc5b14;
     float: left;
     margin-left: -275px;
     padding: 10px;
@@ -205,24 +431,30 @@ textarea {
     margin-top: 10px;
     width: 99%; }
   #snapshots .snapshot table.codeable_question, #snapshots .snapshot table.uncodeable_question {
-    background: #1b325f;
-    border: 1px solid #1b325f;
+    background: #cc5b14;
+    border: 1px solid #cc5b14;
     color: #fff;
     margin: 20px 0; }
     #snapshots .snapshot table.codeable_question tr td, #snapshots .snapshot table.uncodeable_question tr td {
       padding: 15px; }
   #snapshots .snapshot table.uncodeable_question tr:nth-child(even) td {
-    background: #3a89c9; }
+    background: #cc5b14; }
 
 .button {
-  background: #ffd89e;
-  border: 1px solid #f26c4f;
-  color: #793627;
-  cursor: pointer;
+  background: #665c53;
+  border: 1px solid #5b4f45;
+  color: #e6e1cd !important;
+  font-size: 16px;
   letter-spacing: 0.5px;
   margin: 0;
   padding: 10px 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #5b4f45;
   text-transform: uppercase; }
+  .button:hover {
+    background: #5b4f45;
+    cursor: pointer;
+    text-decoration: none; }
 
 .pagination {
   padding: 10px 0;

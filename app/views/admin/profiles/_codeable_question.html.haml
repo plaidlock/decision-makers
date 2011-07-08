@@ -2,12 +2,12 @@
 %tr
   %td= response.response
   - if special
-    %td{:width => '400px'}
-      %table{:width => '400px'}
+    %td{:width => 350}
+      %table.striped-right
         - %w(Family\ Supporters School\ Supporters CBO\ Supporters Peer\ Supporters Other\ Supporters Total\ Reasons).each_with_index do |value, i|
           %tr
-            %td= value
-            %td{:width => '150px', :align => 'right'}= select_tag "responses[#{response.id}][#{i}]", options_for_select((0..10).to_a.collect{|i| [i,i]}, response.code.blank? ? nil : response.code.split(',')[i]), :style => 'width: 150px;', :include_blank => 'Choose...'
+            %th= value
+            %td= select_tag "responses[#{response.id}][#{i}]", options_for_select((0..10).to_a.collect{|i| [i,i]}, response.code.blank? ? nil : response.code.split(',')[i]), :style => 'min-width: 100px;', :include_blank => 'Choose...'
 
   - else
-    %td{:width => '25px'}= select_tag "responses[#{response.id}]", options_for_select((0..3).to_a.collect{|i| [i,i]}, response.code.to_i), :style => 'width: 150px;', :include_blank => 'Choose...'
+    %td{:width => '100px'}= select_tag "responses[#{response.id}]", options_for_select((0..3).to_a.collect{|i| [i,i]}, response.code.blank? ? nil : response.code.to_i), :style => 'min-width: 100px;', :include_blank => 'Choose...'

@@ -1,0 +1,34 @@
+%h2 Reporting
+
+= form_tag admin_reporting_path('generate') do
+  %table.striped-right
+    %tr
+      %th{:width => 150} Class
+      %td= select_tag 'class_id', options_for_select(Klass.all.collect{|k| [k.name, k.id]}), :include_blank => 'Select a class...'
+    %tr
+      %th Profile Type
+      %td= select_tag 'profile_id', options_for_select(Profile::TYPES), :include_blank => 'Select a profile type...'
+    %tr
+      %th Scholars
+      %td
+        %div#students (select a class first)
+  .clear
+  = submit_tag 'Generate Reports', :class => 'button'
+
+:javascript
+  $(function(){
+    $('#class_id').change(function(){
+      processClass(this.value);
+    });
+  });
+  
+  function processClass(classId) {
+    var students = $('#students');
+    
+    $.getJSON('#{admin_scholars_path(:format => 'json')}?class_id='+classId, function(data){
+      students.html('');
+      $.each(data, function(i, value){
+        students.append('<label><input type="checkbox" name="scholar_ids[]" value="'+value.id+'" />'+value.first_name+' '+value.last_name+'</label><br />');
+      });
+    });
+  }

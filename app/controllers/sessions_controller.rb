@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to login_path, :alert => 'Invalid username or password!'
     else
       session[:user_id] = user.id
-      redirect_to session[:return_to] || root_path
+      redirect_to root_path
     end
   end
   

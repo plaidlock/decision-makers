@@ -1,4 +1,4 @@
-%h1= @profile.name
+%h2= @profile.name
 #profile_text= @profile.text.html_safe unless @profile.text.nil?
 
 = form_tag submit_profile_path(@profile) do
@@ -6,8 +6,8 @@
     - @profile.snapshots.each do |snapshot|
       .snapshot
         = render :partial => 'tips', :locals => {:snapshot => snapshot}
-        %h1= snapshot.name
-        %h2= snapshot.subtitle
+        %h2= snapshot.name
+        %h3= snapshot.subtitle
         .snapshot_text= snapshot.text.html_safe
       
         - snapshot.grouped_questions.each_pair do |category, questions|

@@ -5,9 +5,4 @@ class Response < ActiveRecord::Base
   # validations
   validates :scholar_id, :question_id, :response, :presence => true, :allow_nil => false
   validates :question_id, :uniqueness => { :scope => :scholar_id }
-  
-  # instance methods
-  def is_coded?
-    !self.code.nil?
-  end
 end

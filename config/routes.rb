@@ -10,6 +10,7 @@ DecisionMakers::Application.routes.draw do
         post 'code', :action => :code, :as => 'code'
       end
     end
+    match 'reporting(/:action)' => 'reporting', :as => 'reporting'
     resources :schools
     root :to => 'home#index'
   end

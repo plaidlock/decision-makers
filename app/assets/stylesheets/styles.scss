@@ -2,22 +2,32 @@
 
 @import 'base';
 @include reset;
+@import 'fonts';
 
 // colors
-$dark-blue: #1b325f;
-$blue: #3a89c9;
-$orange: #f26c4f;
-$light-blue: #9cc4e4;
-$feint-blue: #e9f2f9;
+$dark-brown: #5b4f45;
+$brown: #665c53;
+$orange: #cc5b14;
+$green: #a1ccae;
+$teal: #71b3a5;
+$light-tan: #f0f2e5;
+$tan: #e6e1cd;
+$red: #c02525;
+$light-red: #e8c9bf;
+$yellow: #d9cd5d;
+$light-yellow: #f1f0c6;
+
 
 html, body {
   height: 100%;
+  min-width: 1000px;
 }
 
 body {
-  background: $dark-blue;
-  color: $dark-blue;
-  font: 16px/20px verdana, sans-serif;
+  background: $tan;
+  color: $brown;
+  font-family: verdana, sans-serif;
+  font-size: 16px;
 }
 
 strong {
@@ -28,65 +38,156 @@ em {
   font-variant: italic;
 }
 
-h1 {
-  color: $blue;
-  font-size: 26px;
-  padding: 5px 0;
+// headers
+$base-header-size: 36px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ostrich Black';
 }
 
 h2 {
   color: $orange;
-  font-size: 22px;
+  font-size: $base-header-size;
+  margin: 10px 0 5px 0;
+  padding: 5px 0;
 }
 
 h3 {
-  font-size: 18px;
+  color: $orange;
+  font-size: $base-header-size/1.5;
+  margin: 40px 0 0 0;
+}
+
+h4 {
+  font-size: $base-header-size/2;
   font-weight: bold;
   margin-top: 25px;
 }
 
 p {
   margin-top: 15px;
+  line-height: 22px;
 }
 
 a, a:visited {
-  color: $orange;
+  color: $teal;
   text-decoration: none;
 }
 
 a:hover {
+  color: $green;
   text-decoration: underline;
 }
 
 table {
-  background: #ffffff;
-  border: 1px solid $dark-blue;
+  width: 100%;
   
-  tr.clickable {
-    cursor: pointer !important;
+  tr {
+    vertical-align: top;
+  }
+  
+  a, a:visited {
+    color: $orange;
     
-    &:hover td {
-      background: #ffffdd !important;
+    &:hover, &:active {
+      color: $orange;
+    }
+  }
+}
+
+table.striped {
+  border-bottom: 1px solid $brown;
+  
+  th {
+    background: $brown;
+    border: 1px solid $brown;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    padding: 15px;
+    text-transform: uppercase;
+    border-right: 1px solid $light-tan;
+    
+    &:last-child {
+     border-right: 1px solid $brown; 
     }
   }
   
-  tr th, tr td {
-    padding: 10px;
+  td {
+    padding: 15px;
+    border: {
+     left: 1px solid $brown;
+     right: 1px solid $brown;
+    }
   }
   
-  tr th {
-    background: $dark-blue;
-    color: #fff;
+  tr:nth-child(odd) td {
+    background: #fff;
   }
   
-  &.striped tr:nth-child(odd) td {
-    background: $feint-blue;
+  tr:nth-child(even) td {
+    background: $tan;
+  }
+}
+
+table.striped-right {
+  border-bottom: 1px solid $brown;
+  
+  tr {
+    th {
+      text-align: right;
+      background: $brown;
+      border: 1px solid $brown;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      padding: 15px;
+      text-transform: uppercase;
+      border: {
+        left: 1px solid $brown;
+        bottom: 1px solid $light-tan; 
+      }
+    }
+    
+    &:last-child th {
+      border-bottom: 1px solid $brown; 
+    }
+  }
+  
+  td {
+    padding: 15px;
+    border: {
+     bottom: 1px solid $brown;
+     top: 1px solid $brown;
+     right: 1px solid $brown;
+    }
+  }
+  
+  tr:nth-child(odd) td {
+    background: #fff;
+  }
+  
+  tr:nth-child(even) td {
+    background: $tan;
+  }
+}
+
+table.clickable tr:hover td {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+table.overview {
+  background: #fff;
+  
+  tr {
+    margin: 20px 0;
+    padding: 20px;
   }
 }
 
 div.section {
-  background: $feint-blue;
-  border: 1px solid $light-blue;
+  background: $light-tan;
+  border: 1px solid $tan;
   padding: 10px;
   margin: 20px;
 }
@@ -119,25 +220,25 @@ ul.tick {
   }
 }
 
-input {
-  border: 1px solid #999;
-  padding: 8px 6px;
-}
-
-select {
-  background: $feint-blue;
-  border: 1px solid $dark-blue;
-  color: $dark-blue;
-  cursor: pointer;
-  height: 25px;
+input, select {
+  background: $light-tan;
+  border: 1px solid $brown;
+  font-size: 16px;
+  min-width: 250px;
+  padding: 7px 10px;
 }
 
 textarea {
   font-size: 16px;
 }
 
-// constants
+//
+//
+// Constants
+//
+//
 .clear {
+  height: 10px;
   clear: both;
 }
 
@@ -156,21 +257,26 @@ textarea {
 }
 
 .alert {
-  border: 1px solid #c00;
-  background: #ffeeee;
-  color: #a00;
+  border: 1px solid $red;
+  background: $light-red;
+  color: $red;
   margin-bottom: 20px;
   padding: 10px;
 }
 
 .notice {
-  border: 1px solid #cc0;
-  background: #ffffee;
+  border: 1px solid $yellow;
+  background: $light-yellow;
+  color: $brown;
   margin-bottom: 20px;
   padding: 10px;
 }
 
-// icons
+//
+//
+// Icons
+//
+//
 .clock {
   background: url('../images/clock.png') no-repeat left center;
   float: left;
@@ -194,13 +300,161 @@ textarea {
 //
 
 #wrapper {
-  background: #fff;
+  background: $light-tan;
+  border: {
+    left: 1px solid #fff;
+    right: 1px solid #fff;
+  };
   margin: 0 auto;
   min-height: 100%;
   padding: 20px;
   width: 940px;
+}
+
+#header {
+  background: $brown;
+  border-bottom: 5px solid $dark-brown;
+  line-height: 150px;
+  text-align: center;
+  width: 100%;
   
-  @include shadow(0 0 50px 10px #000);
+  h1 {
+    color: $teal;
+    font-family: 'Ostrich Black';
+    font-size: 100px;
+    margin-bottom: -5px;
+    text-shadow: 3px 3px 0 $dark-brown;
+    
+    span {
+      color: $green;
+    }
+  }
+}
+
+ul#public_nav {
+  &:before {
+    background: url('/images/ribbon.png') no-repeat;
+    content: '';
+    display: block;
+    float: left;
+    height: 50px;
+    margin-left: -50px;
+    width: 50px;
+    @include shadow(0 3px 0 #ccc);
+  }
+  
+  background: $green;
+  padding: 0;
+  height: 50px;
+  position: relative;
+  margin: -27px auto 0 auto;
+  text-align: center;
+  width: 1000px;
+  @include shadow(0 3px 0 #ccc);
+  
+  li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    
+    a {
+      color: $dark-brown;
+      font-family: 'Ostrich Black';
+      font-size: 28px;
+      line-height: 60px;
+      padding: 0 30px;
+      margin: 0;
+      
+      &:hover {
+        color: $orange/2;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  &:after {
+    background: url('/images/ribbon-mirror.png') no-repeat;
+    content: '';
+    display: block;
+    float: right;
+    height: 50px;
+    margin-right: -50px;
+    width: 50px;
+    @include shadow(0 3px 0 #ccc);
+  }
+}
+
+ul#admin_nav {
+  margin: 10px 0 20px 0;
+  text-align: center;
+  width: 100%;
+  
+  li {
+    display: inline-block;
+    
+    a {
+      color: $brown;
+      font-family: 'Ostrich Rounded';
+      font-size: 20px;
+      padding: 10px 15px 5px 15px;
+      margin: 0;
+      
+      &:hover {
+        color: $orange;
+        text-decoration: none;
+      }
+      
+      &.active {
+        background: $tan;
+        color: $orange;
+        @include corners(10px);
+      }
+    }
+  }
+}
+
+//
+//
+// Admin
+//
+//
+#search  {
+  $width: 300px;
+  width: $width;
+  margin: 10px auto;
+  
+  input {
+    background: #fff;
+    border: 1px solid $tan/1.1;
+    font-size: 10px;
+    padding: 8px 6px;
+    width: $width;
+    @include corners(10px);
+  }
+}
+
+ul#actions {
+  float: right;
+  margin-top: -40px;
+  
+  li {
+    display: inline-block;
+    
+    a {
+      color: $brown;
+      font-family: 'Ostrich Rounded';
+      font-size: 20px;
+      padding: 10px 15px 5px 15px;
+      margin: 0;
+      
+      &:hover {
+        background: $tan;
+        color: $orange;
+        text-decoration: none;
+        @include corners(10px);
+      }
+    }
+  }
 }
 
 
@@ -212,8 +466,8 @@ textarea {
 
 #snapshots {
   .snapshot {
-    background: $feint-blue;
-    border: 1px solid $light-blue;
+    background: $light-tan;
+    border: 1px solid $tan;
     display: none;
     padding: 30px;
     margin: 40px;
@@ -246,8 +500,8 @@ textarea {
     }
     
     table.codeable_question, table.uncodeable_question {
-      background: $dark-blue;
-      border: 1px solid $dark-blue;
+      background: $orange;
+      border: 1px solid $orange;
       color: #fff;
       margin: 20px 0;
       
@@ -258,21 +512,29 @@ textarea {
     
     table.uncodeable_question {
       tr:nth-child(even) td {
-        background: $blue;
+        background: $orange;
       }
     }
   }
 }
 
 .button {
-  background: $orange*2;
-  border: 1px solid $orange;
-  color: $orange/2;
-  cursor: pointer;
+  background: $brown;
+  border: 1px solid $dark-brown;
+  color: $tan !important;
+  font-size: 16px;
   letter-spacing: 0.5px;
   margin: 0;
   padding: 10px 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px $dark-brown;
   text-transform: uppercase;
+  
+  &:hover {
+    background: $dark-brown;
+    cursor: pointer;
+    text-decoration: none;
+  }
 }
 
 .pagination {

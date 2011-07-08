@@ -1,5 +1,8 @@
-%ul#nav
+%ul#public_nav
   %li= link_to 'Welcome', root_path
   %li= link_to 'Overview', page_path('overview')
   %li= link_to 'Scholar\'s Home Page', step_path
-  %li= link_to 'Logout', logout_path, :method => :delete
+  - if logged_in?
+    %li= link_to 'Logout', logout_path, :method => :delete
+  - else
+    %li= link_to 'Login', login_path

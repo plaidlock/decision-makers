@@ -8,10 +8,7 @@ class Assignment < ActiveRecord::Base
   
   # validations
   validates :scholar_id, :profile_id, :presence => true, :allow_nil => false
-  
-  # attr
-  attr_protected :assigned, :started, :completed
-  
+    
   # class methods
   class << self
     def recently_completed(profile, lim = 10)
@@ -29,7 +26,7 @@ class Assignment < ActiveRecord::Base
   end
   
   def status
-    self.is_completed? ? 'completed' : (self.is_started? ? 'in progress' : 'assigned')
+    self.is_completed? ? '&#x2713' : (self.is_started? ? '~' : 'assigned')
   end
   
   private

@@ -24,7 +24,6 @@ class ProfilesController < ApplicationController
     Response.transaction do
       # params[:questions] is a question_id => value hash
       params[:questions].each_pair do |question_id, response|
-        p current_user
         current_user.responses.create!(question_id:question_id, response:response)
       end
     end

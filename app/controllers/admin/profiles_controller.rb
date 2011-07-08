@@ -34,6 +34,9 @@ class Admin::ProfilesController < Admin::ApplicationController
       return render :action => 'show'
     end
     
+    @assignment.is_coded = true
+    @assignment.save!
+    
     redirect_to admin_scholar_profile_path(@scholar, @profile), :notice => 'Profile was coded!'
   end
 end
