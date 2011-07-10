@@ -1,27 +1,29 @@
 %h2 Step 6: Create A Portfolio of Plans, Strengths, and Accomplishments
-.section{:style => 'width: 600px; margin: 20px auto;'}
-  %strong Pat Yourself on the Back
-  %p You have completed a big step on the journey to becoming a <strong>Strong Decision Maker</strong>.
-  %ol
-    %li You have looked at your goals, assets and network of support.
-    %li You have created a portrait of yourself as a decision maker &mdash; past and future
-    %li Your have learned 4 powerful strategies for planning and decision making
+%table{:cellpadding => 5, :style => 'margin: 20px auto;'}
+  %tr
+    %td
+      %strong Pat Yourself on the Back
+      %p You have completed a big step on the journey to becoming a <strong>Strong Decision Maker</strong>.
+      %ol
+        %li You have looked at your goals, assets and network of support.
+        %li You have created a portrait of yourself as a decision maker &mdash; past and future
+        %li Your have learned 4 powerful strategies for planning and decision making
 
-%h2 What is the next step on your journey?
+%h3 What is the next step on your journey?
 %p Chapter 3 is a place to name your goals, set milestones, and record your accomplishments. It's the place to think about these questions:
-%ul.tick
+%ul.dialogue
   %li What are the goals of the program I am in?
   %li What do "I" want to get out of it?
   %li What are my personal goals?
   %li How will I know if I am getting closer?
 
-%h2 Start a portfolio of plans
+%h3 Start a portfolio of plans
 %ul.pencil
   %li <strong>Write a letter to yourself</strong>. Write a letter to the person you will be (the person who will read this letter) a few months from now. Tell your self what you really <strong>plan</strong> to accomplish.
   %li <strong>Set Milestones</strong>. Turn that plan into a <strong>timeline</strong> &mdash; when should things happen? &mdash; or a set of milestones. Milestones are the small steps and signs of progress along the way that show you are getting closer your goals.
 
-%h2 Keep a record of progress and strengths
-%ul.tick
+%h3 Keep a record of progress and strengths
+%ul.check
   %li <strong>Check off Milestones</strong>. Check in with your timeline. Reward yourself for keeping on your schedule. Every time you reach a milestone, check it off and celebrate!
   %li <strong>Collect Evidence of your Strengths</strong>. You can assess your own strengths and progress by looking for situations in which you made a good decision. Think it over: what made it a strong decision: did you consider reasons, rivals, roadblocks? Write it down in your journal or on your memory.
   %li <strong>Share your Story</strong>. If you don’t speak up for your strengths, who will? Let others know about the decisions you faced and how you handled them &mdash; on a regular basis. Then when you are talking to your supervisor or instructor, or applying for an Internship or job, use your stories of strong decision making to describe your self.
@@ -33,3 +35,18 @@
   %p
     &raquo;
     = link_to 'Begin the Letter to Myself', '/downloads/letter-to-myself.doc'
+
+    :css
+      table tr th {
+        border: 1px solid #000;
+        padding: 20px 0;
+        font-size: 14px;
+      }
+
+      table tr {
+        vertical-align: top;
+      }
+
+      table tr td {
+        border: 1px solid #000;
+      }

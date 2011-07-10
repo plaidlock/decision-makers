@@ -1,8 +1,8 @@
-%h2= @profile.name
-#profile_text= @profile.text.html_safe unless @profile.text.nil?
-
 = form_tag submit_profile_path(@profile) do
   #snapshots
+    .snapshot
+      %h2= @profile.name
+      = @profile.text.html_safe unless @profile.text.nil?
     - @profile.snapshots.each do |snapshot|
       .snapshot
         = render :partial => 'tips', :locals => {:snapshot => snapshot}
@@ -16,7 +16,24 @@
           - else
             = render :partial => 'uncodeable_question', :locals => {:questions => questions}
 
-  = submit_tag :submit, :class => 'button', :style => 'width: 100%;'
+  = submit_tag :submit, :class => 'button', :style => 'display:none; width: 100%;'
+
+:css
+  textarea {
+    font-size: 16px;
+    height: 100px;
+    padding: 10px;
+    width: 250px;
+  }
+  
+  table {
+    margin: 0 auto;
+    width: 500px;
+  }
+
+  table tr td {
+    padding: 10px;
+  }
 
 :javascript
   // call our custom javascript paginator

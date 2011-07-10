@@ -11,8 +11,16 @@ class Assignment < ActiveRecord::Base
     
   # class methods
   class << self
+    def coded
+      where('assignments.is_coded = ?', true)
+    end
+    
+    def uncoded
+      where('assignments.is_coded = ?', false)
+    end
+    
     def recently_completed(profile, lim = 10)
-      where(['profile_id = ? AND completed IS NOT NULL', profile]).order('completed DESC').limit(lim)
+      where(['assignments.profile_id = ? AND assignments.completed IS NOT NULL', profile]).order('assignments.completed DESC').limit(lim)
     end
   end
   

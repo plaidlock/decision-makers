@@ -41,11 +41,11 @@ snapshot1 = starting_point_profile.snapshots.create!(name:'Snapshot 1', subtitle
   <p>
     And what is your reason for naming them?  That is, what do they contribute to your network of support?  (Are they role models, mentors, people who challenge you?  Can you turn to them for inspiration, practical advice, recommendations, to learn how to...)?
   </p>
-  <ul>
-    <li class="pencil"> 
+  <ul class="pencil">
+    <li> 
       Write their <strong>names</strong> and <strong>relationship</strong> to you here (e.g., Ms. Jones, my community project contact).
     </li>
-    <li class="pencil">
+    <li>
       Then describe your <strong>reason</strong> for including each person. That is, say how, or what it is they contribute to you and your journey. Write their names and relationship to you here (e.g., Ms. Jones - she makes me feel comfortable asking questions and gives me straight answers.).
     </li>
   </ul>
@@ -63,11 +63,11 @@ snapshot2 = starting_point_profile.snapshots.create!(name:'Snapshot 2', subtitle
     What is important to you at this point in your life?  Think for a moment about some things that matter to you. Think about things you care about, feel committed to, or may even be struggling with in five areas: education, relationships, money, recreation, and health. (The TIPS on the left border will help you create a more complete and reflective picture of yourself.)
   </p>
   
-  <ul>
-    <li class="pencil"> 
+  <ul class="pencil">
+    <li> 
       Try to name the values, goals, or problems you are working on in your everyday life.
     </li>
-    <li class="pencil">
+    <li>
       And then describe what you are actually <strong>doing</strong>.
     </li>
   </ul>
@@ -110,8 +110,8 @@ snapshot3 = starting_point_profile.snapshots.create!(name:'Snapshot 3', subtitle
   <p>
     So what is <strong>your situation</strong>? Answering these questions will help you figure which assets are there for you - and which ones you might want to develop.
   </p>
-  <ul>
-    <li class="pencil"> 
+  <ul class="pencil">
+    <li> 
       How well does each of the following situations or descriptions <strong>fit</strong> - or <strong>not fit</strong> - you?
     </li>
   </ul>
@@ -135,8 +135,8 @@ snapshot3 = starting_point_profile.snapshots.create!(name:'Snapshot 3', subtitle
       </td>
     </tr>
   </table>
-  <ul>
-    <li class="pencil">
+  <ul class="pencil">
+    <li>
       Use the pull-down menu on the right to select the answer which best describes your situation.
     </li>
   </ul>
@@ -242,7 +242,7 @@ if Rails.env.development?
       if question.is_codeable?
         question.responses.create!(scholar_id:s.id, question_id:question.id, response:Faker::Lorem.paragraphs(rand(2)+1))
       else
-        question.responses.create!(scholar_id:s.id, question_id:question.id, response:rand(3)+1)
+        question.responses.create!(scholar_id:s.id, question_id:question.id, response:rand(4))
       end
     end
     s.assignments.find_by_profile_id(starting_point_profile.id).update_attributes(:completed => Time.now)
@@ -253,7 +253,7 @@ if Rails.env.development?
           if i == 0
             question.response_from(s).update_attributes(:code => 6.times.collect{|i| rand(5)}.join(',').to_s)
           else
-            question.response_from(s).update_attributes(:code => rand(3)+1)
+            question.response_from(s).update_attributes(:code => rand(4))
           end
         end
       end

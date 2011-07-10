@@ -1,11 +1,13 @@
-%h1= "Administrator :: #{@administrator.name}"
+%h2= "Administrator :: #{@administrator.name}"
 
-= link_to '[~] Edit', edit_admin_administrator_path(@administrator)
-= link_to '[x] Delete', admin_administrator_path(@administrator), :method => :delete, :confirm => "Are you sure you want to delete #{@administrator.name}? This action cannot be undone!"
+%ul#actions
+  %li= link_to '&laquo; All Administrators'.html_safe, admin_administrators_path
+  %li= link_to '# Edit', edit_admin_administrator_path(@administrator), :class => 'fancybox'
+  %li= link_to 'x Delete', admin_administrator_path(@administrator), :method => :delete, :confirm => "Are you sure you want to delete #{@administrator.name}? This action cannot be undone!"
 
-%table
+%table.striped-right{:style => 'width: 400px'}
   %tr
-    %th first name:
+    %th{:width => 125} first name:
     %td= @administrator.first_name
   %tr
     %th last name:
@@ -13,5 +15,3 @@
   %tr
     %th username:
     %td= @administrator.username
-
-= link_to 'Show All Administrators', admin_administrators_path

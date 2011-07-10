@@ -1,7 +1,16 @@
 = render 'admin/scholars/search'
 
 %h2= "Recent #{@profile.name}s"
-%p This is a listing of all starting point profiles that have recently been completed. If you are looking for a specific Starting Point Profile, <a href="#{admin_scholars_path}">search for the Scholar</a>.
+%p This is a listing of all starting point profiles that have not been coded. If you are looking for a specific Starting Point Profile, <a href="#{admin_scholars_path}">search for the Scholar</a>.
+
+%hr
+
+%table.striped
+  %tr
+    %th Narrow your Search
+    %td= select_tag :klass_id, options_for_select(Klass.all.collect{|k| [k.name, k.id]}, params[:klass_id]), :include_blank => 'Select a Class...', :id => 'filter'
+
+%hr
 
 %table.striped{:width => '100%'}
   %tr
@@ -11,3 +20,10 @@
     %tr
       %td= link_to assignment.scholar.name, admin_scholar_profile_path(assignment.scholar, @profile)
       %td= assignment.completed.strftime('%m/%d/%Y')
+
+:javascript
+  $(function(){
+    $('#filter').change(function(){
+      window.location.href = window.location.href+'?klass_id='+this.value
+    });
+  });

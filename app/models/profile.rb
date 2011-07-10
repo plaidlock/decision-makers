@@ -9,6 +9,8 @@ class Profile < ActiveRecord::Base
   has_many :questions,
     :through => :snapshots
     
+  default_scope includes(:questions)
+
   # validations
   validates :name, :text, :presence => true, :allow_nil => false
   

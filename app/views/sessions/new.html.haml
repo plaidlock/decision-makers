@@ -6,12 +6,12 @@
 %p To begin your Journey, login with your username and password.
 
 = form_tag 'login', :method => :post do
-  %table{:style => 'margin: 0 auto;'}
+  %table{:style => 'margin: 10px auto 0 auto;', :cellpadding => 10}
     %tr
-      %td{:width => '150'} Username:
-      %td= text_field_tag :username, params[:username], :style => 'width: 250px;'
+      %td{:align => 'right'} <strong>Username:</strong>
+      %td= text_field_tag :username, params[:username], :style => 'width: 150px;'
     %tr
-      %td Password:
-      %td= password_field_tag :password, nil, :style => 'width: 250px;'
+      %td{:align => 'right'} <strong>Password:</strong>
+      %td= password_field_tag :password, nil, :style => 'width: 150px;'
     %tr
-      %td{:colspan => 2}= submit_tag :login, :class => 'button', :style => 'width: 100%'
+      %td{:colspan => 2, :align => 'right'}= submit_tag :login, :class => 'button'

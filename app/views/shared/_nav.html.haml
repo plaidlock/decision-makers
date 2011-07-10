@@ -1,8 +1,11 @@
 %ul#public_nav
   %li= link_to 'Welcome', root_path
   %li= link_to 'Overview', page_path('overview')
-  %li= link_to 'Scholar\'s Home Page', step_path
   - if logged_in?
+    - if current_user.is_a?(Administrator)
+      %li= link_to 'Admin', admin_root_path
+    - else
+      %li= link_to 'Scholar\'s Home Page', step_path
     %li= link_to 'Logout', logout_path, :method => :delete
   - else
     %li= link_to 'Login', login_path

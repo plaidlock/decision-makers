@@ -313,7 +313,7 @@
   		},
   		series: [
   		  {
-  		    data: [#{@reflective_decision_making.collect{|r| r.level}.inject(:+)}, 42],
+  		    data: [#{@reflective_decision_making.collect{|r| r.level.to_i*@reflective_decision_making.index(r)}.inject(:+)}, 42],
   		    pointWidth: 75
   		  }
   		],

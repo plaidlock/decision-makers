@@ -1,6 +1,6 @@
 class Admin::AdministratorsController < Admin::ApplicationController
   def index
-    @administrators = Administrator.all
+    @administrators = Administrator.page(params[:page] || 0).per(25)
   end
   
   def show
@@ -30,7 +30,7 @@ class Admin::AdministratorsController < Admin::ApplicationController
     @administrator = Administrator.find(params[:id])
     
     if @administrator.update_attributes(params[:administrator])
-      redirect_to admin_administrators_path, :notice => 'Administrator was updated!'
+      redirect_to admin_administrator_path(@administrator), :notice => 'Administrator was updated!'
     else
       flash.now[:alert] = @administrator.errors.full_messages.join('<br />').html_safe
       render :action => 'edit'

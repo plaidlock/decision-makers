@@ -4,7 +4,7 @@
 
 %ul#actions
   %li= link_to '&laquo; All Scholars'.html_safe, admin_scholars_path
-  %li= link_to '# Edit', edit_admin_scholar_path(@scholar)
+  %li= link_to '# Edit', edit_admin_scholar_path(@scholar), :class => 'fancybox'
   %li= link_to 'x Delete', admin_scholar_path(@scholar), :method => :delete, :confirm => "Are you sure you want to delete #{@scholar.name}? This action cannot be undone!"
 
 %table{:cellpadding => 25}

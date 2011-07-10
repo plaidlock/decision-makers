@@ -1,10 +1,10 @@
 = form_for [:admin, @klass] do |f|
-  %table
+  %table.striped-right{:style => 'width:540px;'}
     %tr
-      %th Name
+      %th{:width => 200} Name
       %td= f.text_field :name
     %tr
       %th Default Password
       %td= f.text_field :default_password
-    %tr
-      %td{:colspan => 2}= f.submit :class => 'button'
+  
+  =f.submit :class => 'button', :style => 'width:540px;'

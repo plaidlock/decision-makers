@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
     
     # redirect back if they've already completed this assignment
     if @assignment.is_completed?
-      flash[:error] = "You have already completed the #{@profile.name}. You can only complete each assignment one time!"
+      flash[:alert] = "You have already completed the #{@profile.name}. You can only complete each profile once!"
       redirect_to step_path
     end
     

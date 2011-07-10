@@ -1,13 +1,29 @@
-%h1= "Class :: #{@klass.name}"
-= link_to '[~] Edit', edit_admin_klass_path(@klass)
-= link_to '[x] Destroy', admin_klass_path(@klass), :method => :delete, :confirm => "Are you sure you want to delete #{@klass.name}? This action cannot be undone!"
+%h2= "Class :: #{@klass.name}"
 
-%table
+%ul#actions
+  %li= link_to '&laquo; All Classes'.html_safe, admin_klasses_path(@klass)
+  %li= link_to '# Edit', edit_admin_klass_path(@klass)
+  %li= link_to 'x Destroy', admin_klass_path(@klass), :method => :delete, :confirm => "Are you sure you want to delete #{@klass.name}? This action cannot be undone!"
+
+%table.striped-right{:style => 'width: 500px;'}
   %tr
-    %th Name
+    %th{:width => 175} Class
     %td= @klass.name
   %tr
     %th Default Password
     %td= @klass.default_password
 
-= link_to 'Show all Classes', admin_klasses_path
+%hr
+
+%table.striped.clickable
+  %tr
+    %th Scholar
+    %th{:width => 250} Username
+    %th{:width => 250} Password
+  - @scholars.each do |scholar|
+    %tr.clickable{:'data-href' => admin_scholar_path(scholar)}
+      %td= scholar.name
+      %td= scholar.username
+      %td= scholar.password
+      
+= paginate(@scholars)

@@ -1,8 +1,14 @@
+%h2 Journey Book Homepage
+%p Through the course of the next few weeks, you will learn the skills to help you make better decisions!
+%p Click on the appropriate Step to begin your Journey:
+
 %ul#steps
-  %li= link_to 'step 1', step_path('starting-point-profile')
-  %li= link_to 'step 2', step_path('journey-book-info')
-  %li= link_to 'step 3', step_path('journey-book-chapter-1')
-  %li= link_to 'step 4', step_path('journey-book-chapter-2')
-  %li= link_to 'step 5', step_path('journey-book-chapter-3')
-  %li= link_to 'step 6', step_path('journey-book-contents')
-  %li= link_to 'step 7', nil
+  %li= link_to 'step 1', step_path('starting-point-profile'), :id => 'step-1'
+  %li= link_to 'step 2', step_path('journey-book-info'), :id => 'step-2'
+  %li= link_to 'step 3', step_path('journey-book-chapter-1'), :id => 'step-3'
+  %li= link_to 'step 4', step_path('journey-book-chapter-2'), :id => 'step-4'
+  %li= link_to 'step 5', step_path('journey-book-chapter-3'), :id => 'step-5'
+  %li= link_to 'step 6', step_path('journey-book-contents'), :id => 'step-6'
+  %li= link_to 'step 7', profile_path(Profile::CPP), :id => 'step-7'
+
+.clear

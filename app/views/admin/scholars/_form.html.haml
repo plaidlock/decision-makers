@@ -1,31 +1,31 @@
 = form_for [:admin, @scholar] do |f|
-  %table
+  %table.striped-right{:style => 'width: 485px'}
     %tr
-      %td{:align => 'right'} choose class:
+      %th{:width => 150} choose class:
       %td= f.select :klass_id, Klass.all.collect{|k| [k.name, k.id, :'data-password' => k.default_password]}, :include_blank => 'Select Class...'
     %tr
-      %td{:align => 'right'} first name:
+      %th first name:
       %td= f.text_field :first_name, :placeholder => 'Bill'
     %tr
-      %td{:align => 'right'} last name:
+      %th last name:
       %td= f.text_field :last_name, :placeholder => 'Jones'
     %tr
-      %td{:align => 'right'} username:
+      %th username:
       %td= f.text_field :username, :placeholder => 'bjones'
     %tr
-      %td{:align => 'right'} password:
+      %th password:
       %td= f.text_field :password
     %tr
-      %td{:align => 'right'} birthdate:
+      %th birthdate:
       %td= f.text_field :birthdate, :placeholder => '1/1/2011', :value => (@scholar.birthdate.strftime('%m/%d/%Y') unless @scholar.birthdate.blank?)
     %tr
-      %td{:align => 'right'} grade:
+      %th grade:
       %td= f.select :grade, Scholar::GRADES.invert, :include_blank => 'Select Grade...'
     %tr
-      %td{:align => 'right'} school:
+      %th school:
       %td= f.select :school_id, School.all.collect{|s| [s.name, s.id]}, :include_blank => 'Select School...'
-    %tr
-      %td{:colspan => 2}= f.submit :class => 'button'
+  
+  = f.submit :class => 'button', :style => 'width: 485px'
 
 :javascript  
   $('#scholar_username').focus(function(){

@@ -1,18 +1,16 @@
 = form_for [:admin, @administrator] do |f|
-  %table
+  %table.striped-right{:style => 'width: 465px'}
     %tr
-      %th{:colspan => 2} Add Administrator
-    %tr
-      %td{:align => 'right'} first name:
+      %th{:width => 125} first name:
       %td= f.text_field :first_name, :placeholder => 'Bill'
     %tr
-      %td{:align => 'right'} last name:
+      %th last name:
       %td= f.text_field :last_name, :placeholder => 'Jones'
     %tr
-      %td{:align => 'right'} username:
+      %th username:
       %td= f.text_field :username, :placeholder => 'bjones'
     %tr
-      %td{:align => 'right'} password:
+      %th password:
       %td= f.text_field :password
-    %tr
-      %td{:colspan => 2}= f.submit :class => 'button'
+  
+  = f.submit :class => 'button', :style => 'width: 465px'

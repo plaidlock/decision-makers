@@ -39,11 +39,13 @@ $(function(){
 });
 
 function addNavCurrentClasses() {
-  $.each($('#public_nav li a, #admin_nav li a'), function(i, value){
-    if(value.getAttribute('href') === document.location.pathname) {
-      value.className += 'active';
+  var lastItem;
+  $.each($('#public_nav li a, #admin_nav li a'), function(i, item){
+    if(document.location.pathname.indexOf(item.getAttribute('href')) !== -1) {
+      lastItem = item;
     }
   });
+  lastItem.className += 'active';
 }
 
 function paginateSnapshots() {

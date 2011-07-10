@@ -1,7 +1,11 @@
 DecisionMakers::Application.routes.draw do
   namespace :admin do
-    resources :administrators
-    resources :klasses
+    resources :administrators do
+      get 'page/:page', :action => :show, :on => :member
+    end
+    resources :klasses do
+      get 'page/:page', :action => :show, :on => :member
+    end
     get 'profiles/:id' => 'profiles#index', :as => 'profile'
     resources :scholars do
       get 'search', :action => :search, :on => :collection, :as => 'search'
@@ -10,8 +14,13 @@ DecisionMakers::Application.routes.draw do
         post 'code', :action => :code, :as => 'code'
       end
     end
+    
+    post 'reporting/aggregate' => 'reporting#aggregate', :as => :aggregate_report
+    get 'reporting/profile/:profile_id/scholar/:scholar_id' => 'reporting#scholar', :as => :scholar_report
     match 'reporting(/:action)' => 'reporting', :as => 'reporting'
-    resources :schools
+    resources :schools do
+      get 'page/:page', :action => :show, :on => :member
+    end
     root :to => 'home#index'
   end
   

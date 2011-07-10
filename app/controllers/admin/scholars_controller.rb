@@ -3,7 +3,7 @@ class Admin::ScholarsController < Admin::ApplicationController
     respond_to do |format|
       format.html {
         page = (params[:page] || 0).to_i
-        @scholars = Scholar.page(params[:page] || 0).per(25)        
+        @scholars = Scholar.page(params[:page] || 0).per(15)        
       }
       format.json {
         @scholars = Scholar.select('users.id, users.first_name, users.last_name').where(:klass_id => params[:class_id])

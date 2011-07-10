@@ -3,16 +3,20 @@
   %head
     %title Decision Makers
     = stylesheet_link_tag %w(styles fancybox jquery-ui), :cache => false
-    = javascript_include_tag %w(jquery jquery-ui jquery-ujs fancybox highcharts exporting application), :cache => false
+    = javascript_include_tag %w(jquery jquery-ui jquery-ujs fancybox application), :cache => false
     = csrf_meta_tag
     
   %body
-    #header
-      %h1 Decision <span>Makers<span>
-    = render :partial => 'shared/nav'
     #wrapper
-      = render :partial => 'admin/shared/nav' if current_user.is_a?(Administrator)
-      - flash.each do |flash_name, value|
-        %div{:class => flash_name}!= value
-      
-      = yield
+      #header
+        %h1 Decision <span>Makers<span>
+        = render :partial => 'shared/nav'
+
+      #content
+        #inner
+          - flash.each do |flash_name, value|
+            %div{:class => flash_name}!= value
+          = yield
+        .clear
+      #footer
+        Copyright &copy; 2011 Linda Fowler

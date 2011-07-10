@@ -1,7 +1,11 @@
 class Admin::ProfilesController < Admin::ApplicationController
   def index
     @profile = Profile.find(params[:id])
-    @assignments = Assignment.recently_completed(@profile.id)
+    @assignments = Assignment.uncoded.recently_completed(@profile.id).page(params[:page] || 0).per(25)
+    if params[:klass_id]
+      @klass = Klass.find(params[:klass_id])
+      @assignments = @assignments.where(:scholar_id => @klass.scholars)
+    end
   end
 
   def show

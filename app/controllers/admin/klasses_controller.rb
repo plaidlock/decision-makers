@@ -5,6 +5,7 @@ class Admin::KlassesController < Admin::ApplicationController
   
   def show
     @klass = Klass.find(params[:id])
+    @scholars = @klass.scholars.page(params[:page] || 0).per(10)
   end
   
   def new

@@ -5,6 +5,7 @@ class Admin::SchoolsController < Admin::ApplicationController
   
   def show
     @school = School.find(params[:id])
+    @scholars = @school.scholars.page(params[:page] || 0).per(10)
   end
   
   def new
