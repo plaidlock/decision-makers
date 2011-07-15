@@ -15,14 +15,14 @@
 
 %hr
 
-%table.striped.clickable
+%table.striped
   %tr
     %th Scholar
     %th{:width => 250} Username
     %th{:width => 250} Password
   - @scholars.each do |scholar|
-    %tr.clickable{:'data-href' => admin_scholar_path(scholar)}
-      %td= scholar.name
+    %tr
+      %td= link_to scholar.name, admin_scholar_path(scholar)
       %td= scholar.username
       %td= scholar.password
       
