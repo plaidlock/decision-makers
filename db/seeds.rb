@@ -236,8 +236,8 @@ snapshot2 = check_point_profile.snapshots.create!(name:'Snapshot 2', subtitle:'H
   snapshot2.questions.create!(question:'In my situation, I had to make a decision about... And some of the options, rivals, or roadblocks I had to consider were...', display_order:1, is_codeable:true)
   snapshot2.questions.create!(question:'I made the decision I did because...', display_order:2, is_codeable:true)
   snapshot2.questions.create!(question:'What I learned about dealing with situations like this was...', display_order:3, is_codeable:true)
-  snapshot2.questions.create!(question:'What this shows about me as a decision maker is...', display_order:2, is_codeable:true)
-  snapshot2.questions.create!(question:'Test your strength as a decision maker. Look at the 4 features of <strong>strong</strong> decision making (listed under Tips on the left). How many of these <strong>4 features</strong> can you find in each part of your story? For example, "My first comment box has specifics and a rival. My second box has..."', display_order:2, is_codeable:true)
+  snapshot2.questions.create!(question:'What this shows about me as a decision maker is...', display_order:4, is_codeable:true)
+  snapshot2.questions.create!(question:'Test your strength as a decision maker. Look at the 4 features of <strong>strong</strong> decision making (listed under Tips on the left). How many of these <strong>4 features</strong> can you find in each part of your story? For example, "My first comment box has specifics and a rival. My second box has..."', display_order:5, is_codeable:true)
 
 
 # snapshot 3
