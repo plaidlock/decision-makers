@@ -5,6 +5,7 @@ class CreateSnapshots < ActiveRecord::Migration
       t.string :name
       t.string :subtitle
       t.text :text
+      t.integer :display_order, :default => 0
     end
     
     add_index :snapshots, :profile_id

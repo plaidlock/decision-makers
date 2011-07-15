@@ -6,6 +6,9 @@ class Snapshot < ActiveRecord::Base
   # validations
   validates :profile_id, :name, :presence => true, :allow_nil => false
   
+  # default scope
+  default_scope order('snapshots.display_order')
+  
   # instance methods
   def grouped_questions
     hash = {}

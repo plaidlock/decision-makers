@@ -50,7 +50,7 @@ snapshot1 = starting_point_profile.snapshots.create!(name:'Snapshot 1', subtitle
     </li>
   </ul>
   <h3>My Network</h3>
-')
+', display_order:1)
 
   snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', display_order:1, is_codeable:true)
 
@@ -72,7 +72,7 @@ snapshot2 = starting_point_profile.snapshots.create!(name:'Snapshot 2', subtitle
       And then describe what you are actually <strong>doing</strong>.
     </li>
   </ul>
-')
+', display_order:2)
 
   snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Learning and Education', display_order:1, is_codeable:true)
   snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Learning and Education',  display_order:2, is_codeable:true)
@@ -141,7 +141,7 @@ snapshot3 = starting_point_profile.snapshots.create!(name:'Snapshot 3', subtitle
       Use the pull-down menu on the right to select the answer which best describes your situation.
     </li>
   </ul>
-')
+', display_order:3)
 
   snapshot3.questions.create!(question:'I am connected to places (like a church or a club) where a young person can play a useful role in their community.', display_order:1, question_category:aar)
   snapshot3.questions.create!(question:'Given the way my family works, I can always turn to my family as a positive resource for good advice and help.', display_order:2, question_category:rwa)
@@ -176,7 +176,7 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
   <p>
     I\'ve been spending a little time thinking about <strong>a few things that I\'d like to change in my life</strong>. So, I am writing to you (to myself!) about <strong>what I want to happen for me</strong> in the next few months. When I read this then, I\'ll see how things have gone.
   </p>
-')
+', display_order:4)
 
   snapshot4.questions.create!(question:'One change I\'d like to make...', display_order:1, is_codeable:true)
   snapshot4.questions.create!(question:'Here are some steps I think I can take to make that change:', display_order:2, is_codeable:true)
@@ -213,7 +213,7 @@ snapshot1 = check_point_profile.snapshots.create!(name:'Snapshot 1', subtitle:'W
     </li>
   </ul>
   <h3>My Network</h3>
-')
+', display_order:1)
 
   snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', display_order:1, is_codeable:true)
 
@@ -231,7 +231,7 @@ snapshot2 = check_point_profile.snapshots.create!(name:'Snapshot 2', subtitle:'H
       On the next page say what you think it shows <strong>about you</strong>. Imagine you are describing this decision to a potential employer, a mentor, or a younger person you want to mentor.
     </li>
   </ul>
-')
+', display_order:2)
 
   snapshot2.questions.create!(question:'In my situation, I had to make a decision about... And some of the options, rivals, or roadblocks I had to consider were...', display_order:1, is_codeable:true)
   snapshot2.questions.create!(question:'I made the decision I did because...', display_order:2, is_codeable:true)
@@ -253,7 +253,7 @@ snapshot3 = check_point_profile.snapshots.create!(name:'Snapshot 3', subtitle:'W
       Use the TIPS on the left border to help you create a more complete picture of yourself as a reflective decision maker in these three areas of your life.
     </li>
   </ul>
-')
+', display_order:3)
 
   snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Learning and Education', display_order:1, is_codeable:true)
   snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Learning and Education',  display_order:2, is_codeable:true)
@@ -263,14 +263,6 @@ snapshot3 = check_point_profile.snapshots.create!(name:'Snapshot 3', subtitle:'W
 
   snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Making, Budgeting, and Using Money', display_order:5, is_codeable:true)
   snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Making, Budgeting, and Using Money', display_order:6, is_codeable:true)
-
-  # why are these questions skipped in CPP?
-  # snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal Time and Recreation', display_order:7, is_codeable:true)
-  # snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal Time and Recreation', display_order:8, is_codeable:true)
-  # 
-  # snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Physical, Emotional, and Sexual Health', display_order:9, is_codeable:true)
-  # snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Physical, Emotional, and Sexual Health', display_order:10, is_codeable:true)
-
 
   snapshot3.tips = [specifics, reasons, rivals, roadblocks]
 
