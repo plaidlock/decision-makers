@@ -5,15 +5,15 @@
 %ul#actions
   %li= link_to '+ Add Scholar', new_admin_scholar_path, :class => 'fancybox'
 
-%table.striped.clickable{:width => '100%'}
+%table.striped{:width => '100%'}
   %tr
     %th{:width => '175'} First Name
     %th{:width => '225'} Last Name
     %th Username
     %th{:width => '150'} Class
   - @scholars.each do |scholar|
-    %tr.clickable{:'data-href' => admin_scholar_path(scholar)}
-      %td= scholar.first_name
+    %tr
+      %td= link_to scholar.first_name, admin_scholar_path(scholar)
       %td= scholar.last_name
       %td= scholar.username
       %td= scholar.klass.name

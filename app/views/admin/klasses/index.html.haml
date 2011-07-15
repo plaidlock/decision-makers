@@ -3,11 +3,11 @@
 %ul#actions
   %li= link_to '+ Add Class', new_admin_klass_path, :class => 'fancybox'
 
-%table.striped.clickable{:width => '100%'}
+%table.striped{:width => '100%'}
   %tr
     %th{:width => '330'} Name
     %th Default Password
   - @klasses.each do |klass|
-    %tr.clickable{:'data-href' => admin_klass_path(klass)}
-      %td= klass.name
+    %tr
+      %td= link_to klass.name, admin_klass_path(klass)
       %td= klass.default_password

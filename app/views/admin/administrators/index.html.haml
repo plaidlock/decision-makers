@@ -3,14 +3,14 @@
 %ul#actions
   %li= link_to '+ Add Administrator', new_admin_administrator_path, :class => 'fancybox'
 
-%table.striped.clickable{:width => '100%'}
+%table.striped{:width => '100%'}
   %tr
     %th{:width => '175'} First Name
     %th{:width => '225'} Last Name
     %th Username
   - @administrators.each do |administrator|
-    %tr.clickable{:'data-href' => admin_administrator_path(administrator)}
-      %td= administrator.first_name
+    %tr
+      %td= link_to administrator.first_name, admin_administrator_path(administrator)
       %td= administrator.last_name
       %td= administrator.username
 
