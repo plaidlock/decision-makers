@@ -1,6 +1,4 @@
 class Admin::ReportingController < Admin::ApplicationController  
-  require 'csv'
-  
   # method for getting json of all scholars who have completed a profile in a class
   def scholars
     klass_scholar_ids = Klass.find(params[:klass_id]).scholars.collect{|s| s.id}    

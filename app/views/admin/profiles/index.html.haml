@@ -8,22 +8,27 @@
 %table.striped
   %tr
     %th Narrow your Search
-    %td= select_tag :klass_id, options_for_select(Klass.all.collect{|k| [k.name, k.id]}, params[:klass_id]), :include_blank => 'Select a Class...', :id => 'filter'
+    %td
+      = form_tag admin_profile_path(@profile), :method => :get do
+        = select_tag :klass_id, options_for_select(Klass.all.collect{|k| [k.name, k.id]}, params[:klass_id]), :include_blank => 'Select a Class...', :id => 'klass_id'
+        %br
+        = select_tag :school_id, options_for_select(School.all.collect{|s| [s.name, s.id]}, params[:school_id]), :include_blank => 'Select a School...', :id => 'school_id'
+        %br
+        = submit_tag :filter, :class => 'button'
 
 %hr
 
 %table.striped{:width => '100%'}
   %tr
     %th{:width => '350'} Student
-    %th{:width => '250'} Completed
+    %th School
+    %th Class
+    %th Completed
+    %th{:width => '20'} Coded?
   - @assignments.each do |assignment|
     %tr
       %td= link_to assignment.scholar.name, admin_scholar_profile_path(assignment.scholar, @profile)
+      %td= assignment.scholar.school
+      %td= assignment.scholar.klass
       %td= assignment.completed.strftime('%m/%d/%Y')
-
-:javascript
-  $(function(){
-    $('#filter').change(function(){
-      window.location.href = window.location.href+'?klass_id='+this.value
-    });
-  });
+      %td{:align => 'center'}= assignment.is_coded? ? '<font size="4">&#x2713;</font>'.html_safe : ''

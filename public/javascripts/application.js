@@ -50,6 +50,11 @@ function addNavCurrentClasses() {
 
 function paginateSnapshots() {
   var snapshots = $('#snapshots').find('.snapshot');
+  var submitButton = document.createElement('input');
+    submitButton.type = 'submit';
+    submitButton.value = 'Submit Profile';
+    submitButton.style.width = '100%';
+  
   
   for(var i = 0; i < snapshots.length; i++) {
     if(i !== 0) {
@@ -67,7 +72,7 @@ function paginateSnapshots() {
       snapshots[i].appendChild(button);
     }
     
-    if(i !== snapshots.length) {
+    if(i !== snapshots.length-1) {
       // add a next button
       var button = document.createElement('input');
       button.type = 'button';
@@ -88,6 +93,8 @@ function paginateSnapshots() {
     div.className = 'clear';
     snapshots[i].appendChild(div);
   }
+  
+  snapshots[snapshots.length-1].appendChild(submitButton);
   
   snapshots[0].style.display = 'block';
 }

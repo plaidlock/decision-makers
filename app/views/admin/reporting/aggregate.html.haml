@@ -67,6 +67,7 @@
     var asset_analysis = new Highcharts.Chart({
       chart: {
         height: 1250,
+        plotBackgroundColor: '#eeeeee',
         renderTo: 'asset-analysis-chart',
         type: 'bar',
         width: 880
@@ -84,7 +85,7 @@
         categories: #{@asset_analysis.collect{|q| q.question}},
         labels: {
           style: {
-            width: '480px'
+            width: '380px'
           }
         },
         title: {
@@ -108,7 +109,10 @@
       plotOptions: {
   			bar: {
   				dataLabels: {
-  					enabled: true
+  					enabled: true,
+  					style: {
+  					  'font-weight': 'bold'
+  					}
   				}
   			},
   			series: {
@@ -146,6 +150,7 @@
     
     var asset_analysis = new Highcharts.Chart({
       chart: {
+        plotBackgroundColor: '#eeeeee',
         renderTo: 'asset-cluster-analysis-chart',
         type: 'bar'
       }, 
@@ -181,7 +186,10 @@
       plotOptions: {
   			bar: {
   				dataLabels: {
-  					enabled: true
+  					enabled: true,
+  					style: {
+  					  'font-weight': 'bold'
+  					}
   				}
   			},
   			series: {
@@ -219,6 +227,7 @@
     
     var asset_analysis = new Highcharts.Chart({
       chart: {
+        plotBackgroundColor: '#eeeeee',
         renderTo: 'reflective-decision-making-pie-chart',
         type: 'pie'
       },
@@ -234,7 +243,10 @@
       plotOptions: {
         pie: {
           dataLabels: {
-            enabled: true
+            enabled: true,
+  					style: {
+  					  'font-weight': 'bold'
+  					}
           },
           showInLegend: true
         }
@@ -274,6 +286,7 @@
     
     var asset_analysis = new Highcharts.Chart({
       chart: {
+        plotBackgroundColor: '#eeeeee',
         renderTo: 'reflective-decision-making-column-chart',
         type: 'column',
         width: 400
@@ -309,7 +322,10 @@
       plotOptions: {
   			column: {
   				dataLabels: {
-  					enabled: true
+  					enabled: true,
+  					style: {
+  					  'font-weight': 'bold'
+  					}
   				}
   			},
   			series: {
@@ -334,7 +350,7 @@
     		    enabled: false
     		  }
   		  },
-  		  filename: 'aggregate-asset-cluster-analysis-#{Time.now.to_i.to_s}',
+  		  filename: 'aggregate-reflective-decision-making-bar-#{Time.now.to_i.to_s}',
   		  type: 'application/pdf'
   		}
     });

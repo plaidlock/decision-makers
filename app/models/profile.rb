@@ -12,7 +12,7 @@ class Profile < ActiveRecord::Base
   default_scope includes(:questions)
 
   # validations
-  validates :name, :text, :presence => true, :allow_nil => false
+  validates :name, :presence => true, :allow_nil => false
   
   def method_missing(m, *args, &block)
     method = m.to_s

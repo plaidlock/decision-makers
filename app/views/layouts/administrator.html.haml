@@ -2,7 +2,8 @@
 %html
   %head
     %title Decision Makers :: Admin
-    = stylesheet_link_tag %w(admin-styles fancybox jquery-ui), :cache => false
+    = stylesheet_link_tag %w(admin-styles fancybox jquery-ui), :media => :screen, :cache => false
+    = stylesheet_link_tag %w(print), :media => :print, :cache => false
     = javascript_include_tag %w(jquery jquery-ui jquery-ujs fancybox highcharts exporting application), :cache => false
     = csrf_meta_tag
     

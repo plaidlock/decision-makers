@@ -1,11 +1,17 @@
 class Admin::ProfilesController < Admin::ApplicationController
   def index
     @profile = Profile.find(params[:id])
-    @assignments = Assignment.uncoded.recently_completed(@profile.id).page(params[:page] || 0).per(25)
-    if params[:klass_id]
+    @assignments = Assignment.recently_completed(@profile.id).includes(:scholar)
+    unless params[:klass_id].blank?
       @klass = Klass.find(params[:klass_id])
       @assignments = @assignments.where(:scholar_id => @klass.scholars)
     end
+    unless params[:school_id].blank?
+      @school = School.find(params[:school_id])
+      @assignments = @assignments.where(:scholar_id => @school.scholars)
+    end
+    
+    @assignments.sort!{|a,b| a.scholar.last_name <=> b.scholar.last_name}
   end
 
   def show

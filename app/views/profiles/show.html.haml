@@ -3,7 +3,7 @@
     .snapshot
       %h2= @profile.name
       = @profile.text.html_safe unless @profile.text.nil?
-    - @profile.snapshots.each do |snapshot|
+    - @profile.snapshots.each_with_index do |snapshot, i|
       .snapshot
         = render :partial => 'tips', :locals => {:snapshot => snapshot}
         %h2= snapshot.name
@@ -15,8 +15,6 @@
             = render :partial => 'codeable_question', :locals => {:category => category, :questions => questions}
           - else
             = render :partial => 'uncodeable_question', :locals => {:questions => questions}
-
-  = submit_tag :submit, :class => 'button', :style => 'display:none; width: 100%;'
 
 :css
   textarea {

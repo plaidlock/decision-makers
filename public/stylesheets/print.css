@@ -1,0 +1,217 @@
+/*
+  http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+:focus {
+  outline: 0; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Ostrich Condensed';
+  src: url("/fonts/ostrich-light-webfont.eot");
+  src: url("/fonts/ostrich-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-light-webfont.woff") format("woff"), url("/fonts/ostrich-light-webfont.ttf") format("truetype"), url("/fonts/ostrich-light-webfont.svg#OstrichSansCondensedLight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Medium';
+  src: url("/fonts/ostrich-regular-webfont.eot");
+  src: url("/fonts/ostrich-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-regular-webfont.woff") format("woff"), url("/fonts/ostrich-regular-webfont.ttf") format("truetype"), url("/fonts/ostrich-regular-webfont.svg#OstrichSansMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Bold';
+  src: url("/fonts/ostrich-bold-webfont.eot");
+  src: url("/fonts/ostrich-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-bold-webfont.woff") format("woff"), url("/fonts/ostrich-bold-webfont.ttf") format("truetype"), url("/fonts/ostrich-bold-webfont.svg#OstrichSansBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Black';
+  src: url("/fonts/ostrich-black-webfont.eot");
+  src: url("/fonts/ostrich-black-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-black-webfont.woff") format("woff"), url("/fonts/ostrich-black-webfont.ttf") format("truetype"), url("/fonts/ostrich-black-webfont.svg#OstrichSansBlack") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Rounded';
+  src: url("/fonts/ostrich-rounded-webfont.eot");
+  src: url("/fonts/ostrich-rounded-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-rounded-webfont.woff") format("woff"), url("/fonts/ostrich-rounded-webfont.ttf") format("truetype"), url("/fonts/ostrich-rounded-webfont.svg#OstrichSansRoundedMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ostrich Dashed';
+  src: url("/fonts/ostrich-dashed-webfont.eot");
+  src: url("/fonts/ostrich-dashed-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ostrich-dashed-webfont.woff") format("woff"), url("/fonts/ostrich-dashed-webfont.ttf") format("truetype"), url("/fonts/ostrich-dashed-webfont.svg#OstrichSansDashedMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Scribble';
+  src: url("/fonts/ArchitectsDaughter-webfont.eot");
+  src: url("/fonts/ArchitectsDaughter-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/ArchitectsDaughter-webfont.woff") format("woff"), url("/fonts/ArchitectsDaughter-webfont.ttf") format("truetype"), url("/fonts/ArchitectsDaughter-webfont.svg#ArchitectsDaughterRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+html, body {
+  height: 100%;
+  min-width: 1000px; }
+
+body {
+  color: #000000;
+  font-family: verdana, sans-serif;
+  font-size: 16px; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  font-variant: italic; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ostrich Black'; }
+
+h2 {
+  color: #cc5b14;
+  font-size: 36px;
+  margin: 10px 0 5px 0;
+  padding: 5px 0; }
+
+h3 {
+  color: #cc5b14;
+  font-size: 24px;
+  margin: 40px 0 0 0; }
+
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 25px; }
+
+p {
+  margin-top: 15px;
+  line-height: 22px; }
+
+a, a:visited {
+  color: blue;
+  text-decoration: none; }
+
+table {
+  width: 100%; }
+  table tr {
+    vertical-align: top; }
+    table tr th, table tr td {
+      border: 1px solid #eee;
+      padding: 10px; }
+  table a, table a:visited {
+    color: #000 !important; }
+
+div.section {
+  background: #f0f2e5;
+  border: 1px solid #e6e1cd;
+  padding: 10px;
+  margin: 20px; }
+
+ul, ol {
+  margin-left: 10px; }
+
+ol {
+  list-style: decimal inside; }
+
+ul.pencil {
+  margin: 10px 20px;
+  list-style: none; }
+  ul.pencil li {
+    background: url("../images/pencil.png") no-repeat left center;
+    padding: 3px 0 3px 24px; }
+
+ul.tick {
+  margin: 10px 20px;
+  list-style: none; }
+  ul.tick li {
+    background: url("../images/tick.png") no-repeat left center;
+    padding: 3px 0 3px 24px; }
+
+.clear {
+  height: 10px;
+  clear: both; }
+
+.none {
+  display: none; }
+
+.left {
+  float: left;
+  margin-right: 20px; }
+
+.right {
+  float: right;
+  margin-left: 20px; }
+
+.alert {
+  border: 1px solid #c02525;
+  background: #e8c9bf;
+  color: #c02525;
+  margin-bottom: 20px;
+  padding: 10px; }
+
+.notice {
+  border: 1px solid #d9cd5d;
+  background: #f1f0c6;
+  color: #665c53;
+  margin-bottom: 20px;
+  padding: 10px; }
+
+#wrapper {
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 20px;
+  width: 940px; }
+
+#header {
+  display: none; }
+
+ul#public_nav {
+  display: none; }
+
+ul#admin_nav {
+  display: none; }
+
+#search {
+  display: none; }
+
+ul#actions {
+  display: none; }
+
+.pagination {
+  padding: 10px 0;
+  text-align: center; }

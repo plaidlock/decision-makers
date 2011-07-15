@@ -6,6 +6,6 @@
   %tr
   - questions.each do |question|
     %td
-      = question.question.html_safe
+      = "<font size=\"3\">#{question.question}</font>".html_safe
       %br
         = text_area_tag "questions[#{question.id}]", ''

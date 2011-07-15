@@ -49,6 +49,7 @@ snapshot1 = starting_point_profile.snapshots.create!(name:'Snapshot 1', subtitle
       Then describe your <strong>reason</strong> for including each person. That is, say how, or what it is they contribute to you and your journey. Write their names and relationship to you here (e.g., Ms. Jones - she makes me feel comfortable asking questions and gives me straight answers.).
     </li>
   </ul>
+  <h3>My Network</h3>
 ')
 
   snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', display_order:1, is_codeable:true)
@@ -185,6 +186,97 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
   snapshot4.questions.create!(question:'I will know I am starting to make progress when...', display_order:6, is_codeable:true)
 
   snapshot4.tips = [specifics, reasons, rivals, roadblocks]
+
+
+# check point profile
+check_point_profile = Profile.create!(name:'Check Point Profile', text:'
+  <p>
+    Click Next to begin your Check Point Profile
+  </p>
+')
+
+# snapshot 1
+snapshot1 = check_point_profile.snapshots.create!(name:'Snapshot 1', subtitle:'Who is traveling with me?', text:'
+  <p>Who are the <strong>key</strong> people traveling with me <strong>now</strong>?</p>
+  <p>
+    In your Starting Point Profile, you listed key people who contribute different things to your network of support (by being role models, mentors, or people who challenge you). And you noted your reasons for including each one. (That is, you can turn to them for inspiration, practical advice, recommendations, to learn how to...)
+  </p>
+  <p>
+    For this Check Point, consider your Network of Support again. Has it grown? Can you see new or additional reasons you might have for calling on different people?
+  </p>
+  <ul class="pencil">
+    <li>
+      Write their <strong>names</strong> and <strong>relationship</strong> to you below (e.g., Ms. Smith, another employee at my job).
+    </li>
+    <li>
+      Then describe your <strong>reasons</strong> for including each person. That is, say how, or what it is they could contribute as part of your network of support (e.g., She shows me how to keep my cool, even when we are under pressure.)
+    </li>
+  </ul>
+  <h3>My Network</h3>
+')
+
+  snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', display_order:1, is_codeable:true)
+
+
+# snapshot 2
+snapshot2 = check_point_profile.snapshots.create!(name:'Snapshot 2', subtitle:'How am I doing as a Decision Maker?', text:'
+  <p>
+    Think back to a recent situation where you feel that you acted like a <strong>strong</strong> decision maker. That is, where you considered your options and reflected on rivals and possible outcomes before you acted.
+  </p>
+  <ul class="pencil">
+    <li>
+      Describe your decision making <strong>process</strong> and what you had to think about.
+    </li>
+    <li>
+      On the next page say what you think it shows <strong>about you</strong>. Imagine you are describing this decision to a potential employer, a mentor, or a younger person you want to mentor.
+    </li>
+  </ul>
+')
+
+  snapshot2.questions.create!(question:'In my situation, I had to make a decision about... And some of the options, rivals, or roadblocks I had to consider were...', display_order:1, is_codeable:true)
+  snapshot2.questions.create!(question:'I made the decision I did because...', display_order:2, is_codeable:true)
+  snapshot2.questions.create!(question:'What I learned about dealing with situations like this was...', display_order:3, is_codeable:true)
+  snapshot2.questions.create!(question:'What this shows about me as a decision maker is...', display_order:2, is_codeable:true)
+  snapshot2.questions.create!(question:'Test your strength as a decision maker. Look at the 4 features of <strong>strong</strong> decision making (listed under Tips on the left). How many of these <strong>4 features</strong> can you find in each part of your story? For example, "My first comment box has specifics and a rival. My second box has..."', display_order:2, is_codeable:true)
+
+
+# snapshot 3
+snapshot3 = check_point_profile.snapshots.create!(name:'Snapshot 3', subtitle:'What am I working on in my life now?', text:'
+  <p>
+    Think back to the values, goals, or problems that were important to you when you wrote your Starting Point Profile. For this Check Point we will focus on what you are working on now in just three areas: in learning and education; in personal and community relationships; and in making, budgeting and using money.
+  </p>
+  <ul class="pencil">
+    <li>
+      See if you can write a <strong>stronger</strong> (more reflective) description of your goals and your plans and steps now that some time has passed.
+    </li>
+    <li>
+      Use the TIPS on the left border to help you create a more complete picture of yourself as a reflective decision maker in these three areas of your life.
+    </li>
+  </ul>
+')
+
+  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Learning and Education', display_order:1, is_codeable:true)
+  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Learning and Education',  display_order:2, is_codeable:true)
+
+  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal and Community Relationships', display_order:3, is_codeable:true)
+  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal and Community Relationships', display_order:4, is_codeable:true)
+
+  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Making, Budgeting, and Using Money', display_order:5, is_codeable:true)
+  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Making, Budgeting, and Using Money', display_order:6, is_codeable:true)
+
+  # why are these questions skipped in CPP?
+  # snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal Time and Recreation', display_order:7, is_codeable:true)
+  # snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal Time and Recreation', display_order:8, is_codeable:true)
+  # 
+  # snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Physical, Emotional, and Sexual Health', display_order:9, is_codeable:true)
+  # snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Physical, Emotional, and Sexual Health', display_order:10, is_codeable:true)
+
+
+  snapshot3.tips = [specifics, reasons, rivals, roadblocks]
+
+
+
+
 
   # default admin
   default_admin = Administrator.create!(username:'admin', password:'test', first_name:'Admin', last_name:'User')

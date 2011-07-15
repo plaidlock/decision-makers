@@ -35,7 +35,7 @@ class Scholar < User
         agg_network_of_support[:others] += network_of_support.others
         agg_network_of_support[:reasons] += network_of_support.reasons
       end
-      agg_network_of_support.each_pair {|k,v| agg_network_of_support[k] = (v/num_scholars).round(2)}
+      agg_network_of_support.each_pair {|k,v| agg_network_of_support[k] = (v/num_scholars).round(1)}
       agg_network_of_support = OpenStruct.new(agg_network_of_support)
 
       agg_asset_analysis = asset_analyses.shift # [] - remove the first asset_analysis so we can be somewhat efficient
@@ -44,7 +44,7 @@ class Scholar < User
           agg_asset_analysis[i].response += question.response
         end
       end
-      agg_asset_analysis.each {|aaa| aaa.response = (aaa.response/num_scholars).round(2)}
+      agg_asset_analysis.each {|aaa| aaa.response = (aaa.response/num_scholars).round(1)}
       
       agg_asset_cluster_analysis = asset_cluster_analyses.shift
       asset_cluster_analyses.each do |asset_cluster_analysis|
@@ -52,7 +52,7 @@ class Scholar < User
           agg_asset_cluster_analysis[i].value += response.value
         end
       end
-      agg_asset_cluster_analysis.each {|aaca| aaca.value = (aaca.value/num_scholars).round(2)}
+      agg_asset_cluster_analysis.each {|aaca| aaca.value = (aaca.value/num_scholars).round(1)}
       
       agg_reflective_decision_making = reflective_decision_makings.shift
       reflective_decision_makings.each do |reflective_decision_making|
@@ -61,7 +61,7 @@ class Scholar < User
           agg_reflective_decision_making[i].value += response.value
         end
       end
-      agg_reflective_decision_making.each {|ardm| ardm.level = (ardm.level/num_scholars).round(2); ardm.value = (ardm.value/num_scholars).round(2)}
+      agg_reflective_decision_making.each {|ardm| ardm.level = (ardm.level/num_scholars).round(1); ardm.value = (ardm.value/num_scholars).round(1)}
       
       return agg_network_of_support, agg_asset_analysis, agg_asset_cluster_analysis, agg_reflective_decision_making
     end
@@ -130,7 +130,7 @@ class Scholar < User
     reflective_decision_making = []
     colors = ['#303b13', '#993333', '#ffff9a', '#b3c98b']
     %w(None/No\ Fit Common\ Sense Supports\ Action Supports\ Reflective\ Reasoned\ Action).each_with_index do |name, i|
-      reflective_decision_making << OpenStruct.new({:name => name, :color => colors[i], :level => tallies[i], :value => (tallies[i]/sum)*100})
+      reflective_decision_making << OpenStruct.new({:name => name, :color => colors[i], :level => tallies[i], :value => ((tallies[i]/sum)*100).round(1)})
     end
     
     p reflective_decision_making
