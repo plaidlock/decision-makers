@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20110707204904) do
     t.string  "name"
     t.string  "subtitle"
     t.text    "text"
+    t.integer "display_order", :default => 0
   end
 
   add_index "snapshots", ["profile_id"], :name => "index_snapshots_on_profile_id"
