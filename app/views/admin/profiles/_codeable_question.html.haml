@@ -1,7 +1,7 @@
 - response = question.response_from(scholar)
 %tr
   %td
-    <font size="-1"><strong>#{question.question.html_safe}</strong></font><br />
+    <font size="-1"><strong>#{question.question_number}. #{question.question.html_safe}</strong></font><br />
     = response.response
   - unless question.snapshot.name == 'Snapshot 4' && question.snapshot.questions[0...2].include?(question)
     - if special

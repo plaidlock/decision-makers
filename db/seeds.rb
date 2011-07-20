@@ -74,20 +74,20 @@ snapshot2 = starting_point_profile.snapshots.create!(name:'Snapshot 2', subtitle
   </ul>
 ', display_order:2)
 
-  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Learning and Education', display_order:1, is_codeable:true)
-  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Learning and Education',  display_order:2, is_codeable:true)
+  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Learning and Education', question_number:'1a', display_order:1, is_codeable:true)
+  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Learning and Education', question_number:'1b',  display_order:2, is_codeable:true)
 
-  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal and Community Relationships', display_order:3, is_codeable:true)
-  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal and Community Relationships', display_order:4, is_codeable:true)
+  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal and Community Relationships', question_number:'2a', display_order:3, is_codeable:true)
+  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal and Community Relationships', question_number:'2b', display_order:4, is_codeable:true)
 
-  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Making, Budgeting, and Using Money', display_order:5, is_codeable:true)
-  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Making, Budgeting, and Using Money', display_order:6, is_codeable:true)
+  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Making, Budgeting, and Using Money', question_number:'3a', display_order:5, is_codeable:true)
+  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Making, Budgeting, and Using Money', question_number:'3b', display_order:6, is_codeable:true)
 
-  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal Time and Recreation', display_order:7, is_codeable:true)
-  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal Time and Recreation', display_order:8, is_codeable:true)
+  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal Time and Recreation', question_number:'4a', display_order:7, is_codeable:true)
+  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal Time and Recreation', question_number:'4b', display_order:8, is_codeable:true)
 
-  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Physical, Emotional, and Sexual Health', display_order:9, is_codeable:true)
-  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Physical, Emotional, and Sexual Health', display_order:10, is_codeable:true)
+  snapshot2.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Physical, Emotional, and Sexual Health', question_number:'5a', display_order:9, is_codeable:true)
+  snapshot2.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Physical, Emotional, and Sexual Health', question_number:'5b', display_order:10, is_codeable:true)
 
   snapshot2.tips = [specifics, reasons, rivals, roadblocks]
 
@@ -143,28 +143,28 @@ snapshot3 = starting_point_profile.snapshots.create!(name:'Snapshot 3', subtitle
   </ul>
 ', display_order:3)
 
-  snapshot3.questions.create!(question:'I am connected to places (like a church or a club) where a young person can play a useful role in their community.', display_order:1, question_category:aar)
-  snapshot3.questions.create!(question:'Given the way my family works, I can always turn to my family as a positive resource for good advice and help.', display_order:2, question_category:rwa)
-  snapshot3.questions.create!(question:'I am well connected to two or more adults who have strong experiences with a career and post-secondary education and who will support me.', display_order:3, question_category:rwa)
-  snapshot3.questions.create!(question:'I am connected to my community in service to others (for at least an hour per week).', display_order:4, question_category:aar)
-  snapshot3.questions.create!(question:'I can easily name three or more adults (not parents) who talk with me to advise and encourage me, both now and in the future.', display_order:5, question_category:rwa)
-  snapshot3.questions.create!(question:'In conversations with adults, I find I can communicate my goals and my strengths in ways that they can understand.', display_order:6, question_category:aar)
-  snapshot3.questions.create!(question:'I consider myself motivated when it comes to school performance even when a subject doesn\'t interest me.', display_order:7, question_category:aam)
-  snapshot3.questions.create!(question:'I go after opportunities to learn new knowledge or develop skills even when they\'re not required.', display_order:8, question_category:aam)
-  snapshot3.questions.create!(question:'When I look at the roads I am taking, I sense my life has a clear purpose.', display_order:9, question_category:aam)
-  snapshot3.questions.create!(question:'I receive lots of encouragement from parents and teachers who have high expectations for me.', display_order:10, question_category:rwa)
-  snapshot3.questions.create!(question:'I have shown that I am a person who can take on responsibility and follow through.', display_order:11, question_category:aar)
-  snapshot3.questions.create!(question:'When I face problems at school or at work, I know some good strategies for communicating with people so I know I can handle a situation by discussion or explaining.', display_order:12, question_category:pdm)
-  snapshot3.questions.create!(question:'I have a history of making good choices when it comes to alcohol, drugs, and sex.', display_order:13, question_category:pdm)
-  snapshot3.questions.create!(question:'I have a history of handling negative peer pressure especially in difficult situations.', display_order:14, question_category:dwo)
-  snapshot3.questions.create!(question:'I have had successful experiences working with people at school or work who are different from me - because of their race, neighborhood, income or social background.', display_order:15, question_category:dwo)
-  snapshot3.questions.create!(question:'When someone challenges my ideas or beliefs, I feel able to stand up for my ideas in front of others, to do what I think is right.', display_order:16, question_category:dwo)
-  snapshot3.questions.create!(question:'When I face hard choices, I normally think through all my options and possible outcomes rather than waiting to see what happens.', display_order:17, question_category:pdm)
-  snapshot3.questions.create!(question:'I do a lot of planning about my future and the specific things I need to do now.', display_order:18, question_category:pdm)
-  snapshot3.questions.create!(question:'When I enter unfamiliar situations (where people have new expectations of me or confusing ways of explaining things), I am good at finding out all the things I need to know.', display_order:19, question_category:dwo)
-  snapshot3.questions.create!(question:'I feel like I have control over things that are happening in my own life at home, school, work.', display_order:20, question_category:aam)
-  snapshot3.questions.create!(question:'When I look at my situation and the choices I have made this past year, I would call myself a good decision maker.', display_order:21, question_category:pdm)
-  snapshot3.questions.create!(question:'As for my personal future, I have reasons to feel quite optimistic.', display_order:22, question_category:aam)
+  snapshot3.questions.create!(question:'I am connected to places (like a church or a club) where a young person can play a useful role in their community.', question_number:'1', display_order:1, question_category:aar)
+  snapshot3.questions.create!(question:'Given the way my family works, I can always turn to my family as a positive resource for good advice and help.', question_number:'2', display_order:2, question_category:rwa)
+  snapshot3.questions.create!(question:'I am well connected to two or more adults who have strong experiences with a career and post-secondary education and who will support me.', question_number:'3', display_order:3, question_category:rwa)
+  snapshot3.questions.create!(question:'I am connected to my community in service to others (for at least an hour per week).', question_number:'4', display_order:4, question_category:aar)
+  snapshot3.questions.create!(question:'I can easily name three or more adults (not parents) who talk with me to advise and encourage me, both now and in the future.', question_number:'5', display_order:5, question_category:rwa)
+  snapshot3.questions.create!(question:'In conversations with adults, I find I can communicate my goals and my strengths in ways that they can understand.', question_number:'6', display_order:6, question_category:aar)
+  snapshot3.questions.create!(question:'I consider myself motivated when it comes to school performance even when a subject doesn\'t interest me.', question_number:'7', display_order:7, question_category:aam)
+  snapshot3.questions.create!(question:'I go after opportunities to learn new knowledge or develop skills even when they\'re not required.', question_number:'8', display_order:8, question_category:aam)
+  snapshot3.questions.create!(question:'When I look at the roads I am taking, I sense my life has a clear purpose.', question_number:'9', display_order:9, question_category:aam)
+  snapshot3.questions.create!(question:'I receive lots of encouragement from parents and teachers who have high expectations for me.', question_number:'10', display_order:10, question_category:rwa)
+  snapshot3.questions.create!(question:'I have shown that I am a person who can take on responsibility and follow through.', question_number:'11', display_order:11, question_category:aar)
+  snapshot3.questions.create!(question:'When I face problems at school or at work, I know some good strategies for communicating with people so I know I can handle a situation by discussion or explaining.', question_number:'12', display_order:12, question_category:pdm)
+  snapshot3.questions.create!(question:'I have a history of making good choices when it comes to alcohol, drugs, and sex.', question_number:'13', display_order:13, question_category:pdm)
+  snapshot3.questions.create!(question:'I have a history of handling negative peer pressure especially in difficult situations.', question_number:'14', display_order:14, question_category:dwo)
+  snapshot3.questions.create!(question:'I have had successful experiences working with people at school or work who are different from me - because of their race, neighborhood, income or social background.', question_number:'15', display_order:15, question_category:dwo)
+  snapshot3.questions.create!(question:'When someone challenges my ideas or beliefs, I feel able to stand up for my ideas in front of others, to do what I think is right.', question_number:'16', display_order:16, question_category:dwo)
+  snapshot3.questions.create!(question:'When I face hard choices, I normally think through all my options and possible outcomes rather than waiting to see what happens.', question_number:'17', display_order:17, question_category:pdm)
+  snapshot3.questions.create!(question:'I do a lot of planning about my future and the specific things I need to do now.', question_number:'18', display_order:18, question_category:pdm)
+  snapshot3.questions.create!(question:'When I enter unfamiliar situations (where people have new expectations of me or confusing ways of explaining things), I am good at finding out all the things I need to know.', question_number:'19', display_order:19, question_category:dwo)
+  snapshot3.questions.create!(question:'I feel like I have control over things that are happening in my own life at home, school, work.', question_number:'20', display_order:20, question_category:aam)
+  snapshot3.questions.create!(question:'When I look at my situation and the choices I have made this past year, I would call myself a good decision maker.', question_number:'21', display_order:21, question_category:pdm)
+  snapshot3.questions.create!(question:'As for my personal future, I have reasons to feel quite optimistic.', question_number:'22', display_order:22, question_category:aam)
 
 
 
@@ -178,12 +178,12 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
   </p>
 ', display_order:4)
 
-  snapshot4.questions.create!(question:'One change I\'d like to make...', display_order:1, is_codeable:true)
-  snapshot4.questions.create!(question:'Here are some steps I think I can take to make that change:', display_order:2, is_codeable:true)
-  snapshot4.questions.create!(question:'I will know I am starting to make progress when...', display_order:3, is_codeable:true)
-  snapshot4.questions.create!(question:'A second change I\'d like to make...', display_order:4, is_codeable:true)
-  snapshot4.questions.create!(question:'Here are some steps I think I can take to make that change:', display_order:5, is_codeable:true)
-  snapshot4.questions.create!(question:'I will know I am starting to make progress when...', display_order:6, is_codeable:true)
+  snapshot4.questions.create!(question:'One change I\'d like to make...', question_number:'1a', display_order:1, is_codeable:true)
+  snapshot4.questions.create!(question:'Here are some steps I think I can take to make that change:', question_number:'1b', display_order:2, is_codeable:true)
+  snapshot4.questions.create!(question:'I will know I am starting to make progress when...', question_number:'1a', display_order:3, is_codeable:true)
+  snapshot4.questions.create!(question:'A second change I\'d like to make...', question_number:'2a', display_order:4, is_codeable:true)
+  snapshot4.questions.create!(question:'Here are some steps I think I can take to make that change:', question_number:'2b', display_order:5, is_codeable:true)
+  snapshot4.questions.create!(question:'I will know I am starting to make progress when...', question_number:'2c', display_order:6, is_codeable:true)
 
   snapshot4.tips = [specifics, reasons, rivals, roadblocks]
 
@@ -215,7 +215,7 @@ snapshot1 = check_point_profile.snapshots.create!(name:'Snapshot 1', subtitle:'W
   <h3>My Network</h3>
 ', display_order:1)
 
-  snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', display_order:1, is_codeable:true)
+  snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', question_number:'1', display_order:1, is_codeable:true)
 
 
 # snapshot 2
@@ -233,11 +233,11 @@ snapshot2 = check_point_profile.snapshots.create!(name:'Snapshot 2', subtitle:'H
   </ul>
 ', display_order:2)
 
-  snapshot2.questions.create!(question:'In my situation, I had to make a decision about... And some of the options, rivals, or roadblocks I had to consider were...', display_order:1, is_codeable:true)
-  snapshot2.questions.create!(question:'I made the decision I did because...', display_order:2, is_codeable:true)
-  snapshot2.questions.create!(question:'What I learned about dealing with situations like this was...', display_order:3, is_codeable:true)
-  snapshot2.questions.create!(question:'What this shows about me as a decision maker is...', display_order:4, is_codeable:true)
-  snapshot2.questions.create!(question:'Test your strength as a decision maker. Look at the 4 features of <strong>strong</strong> decision making (listed under Tips on the left). How many of these <strong>4 features</strong> can you find in each part of your story? For example, "My first comment box has specifics and a rival. My second box has..."', display_order:5, is_codeable:true)
+  snapshot2.questions.create!(question:'In my situation, I had to make a decision about... And some of the options, rivals, or roadblocks I had to consider were...', question_number:'1', display_order:1, is_codeable:true)
+  snapshot2.questions.create!(question:'I made the decision I did because...', question_number:'2', display_order:2, is_codeable:true)
+  snapshot2.questions.create!(question:'What I learned about dealing with situations like this was...', question_number:'3', display_order:3, is_codeable:true)
+  snapshot2.questions.create!(question:'What this shows about me as a decision maker is...', question_number:'4', display_order:4, is_codeable:true)
+  snapshot2.questions.create!(question:'Test your strength as a decision maker. Look at the 4 features of <strong>strong</strong> decision making (listed under Tips on the left). How many of these <strong>4 features</strong> can you find in each part of your story? For example, "My first comment box has specifics and a rival. My second box has..."', question_number:'5', display_order:5, is_codeable:true)
 
 
 # snapshot 3
@@ -255,14 +255,14 @@ snapshot3 = check_point_profile.snapshots.create!(name:'Snapshot 3', subtitle:'W
   </ul>
 ', display_order:3)
 
-  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Learning and Education', display_order:1, is_codeable:true)
-  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Learning and Education',  display_order:2, is_codeable:true)
+  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', question_number:'1', category:'In Learning and Education', display_order:1, is_codeable:true)
+  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', question_number:'2', category:'In Learning and Education',  display_order:2, is_codeable:true)
 
-  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Personal and Community Relationships', display_order:3, is_codeable:true)
-  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Personal and Community Relationships', display_order:4, is_codeable:true)
+  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', question_number:'3', category:'In Personal and Community Relationships', display_order:3, is_codeable:true)
+  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', question_number:'4', category:'In Personal and Community Relationships', display_order:4, is_codeable:true)
 
-  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', category:'In Making, Budgeting, and Using Money', display_order:5, is_codeable:true)
-  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', category:'In Making, Budgeting, and Using Money', display_order:6, is_codeable:true)
+  snapshot3.questions.create!(question:'What matters to me? What values or goals or problems am I working on in my life?', question_number:'5', category:'In Making, Budgeting, and Using Money', display_order:5, is_codeable:true)
+  snapshot3.questions.create!(question:'What specific steps am I taking to reach my goals or act on what I care about?', question_number:'6', category:'In Making, Budgeting, and Using Money', display_order:6, is_codeable:true)
 
   snapshot3.tips = [specifics, reasons, rivals, roadblocks]
 

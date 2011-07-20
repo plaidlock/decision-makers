@@ -1,5 +1,5 @@
 - response = question.response_from(scholar)
 
 %tr
-  %td <strong>#{question.question}</strong>
+  %td <strong>#{question.question_number}. #{question.question}</strong>
   %td{:align => 'right'}= select_tag "responses[#{response.id}]", options_for_select([[Question::NON_CODEABLE_OPTIONS[response.response.to_i][0], response.response.to_i]]), :disabled => true, :style => 'width: 50px;'

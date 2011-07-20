@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110707204904) do
+ActiveRecord::Schema.define(:version => 20110720212551) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "scholar_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20110707204904) do
     t.string  "category"
     t.integer "display_order"
     t.boolean "is_codeable",          :default => false
+    t.string  "question_number"
   end
 
   add_index "questions", ["category"], :name => "index_questions_on_category"

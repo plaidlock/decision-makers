@@ -98,7 +98,7 @@ class Scholar < User
     asset_analysis = []
     questions.each do |question|
       response = question.response_from(self)
-      asset_analysis << OpenStruct.new({question:question.question, response:response.response.to_i, color:question.question_category.color})
+      asset_analysis << OpenStruct.new({question:"#{question.question_number}. #{question.question}", response:response.response.to_i, color:question.question_category.color})
     end
     
     return asset_analysis
@@ -118,8 +118,8 @@ class Scholar < User
   end
   
   def reflective_decision_making(profile)
-    # snapshots 2 & 4, but ignore the first 2 questions of snapshot 4
-    questions = profile.snapshot_2.questions + profile.snapshot_4.questions[2..-1]
+    # snapshots 2 & 4, but ignore 2 questions of snapshot 4
+    questions = profile.snapshot_2.questions + profile.snapshot_4.questions[1..2] + profile.snapshot_4.questions[4..5]
     
     tallies = [0, 0, 0, 0]
     sum = 0.to_f
