@@ -109,7 +109,7 @@ class Scholar < User
     
     asset_cluster_analysis = []
     QuestionCategory.all.each do |question_category|
-      responses = question_category.responses_from(self) || 0
+      responses = question_category.responses_from(self) || [0]
       num_responses = responses.size.to_f
       asset_cluster_analysis << OpenStruct.new({:category => question_category.name, :value => responses.collect{|r| r.response.to_i}.inject(:+)/num_responses,  :color => question_category.color})
     end
@@ -124,7 +124,7 @@ class Scholar < User
     tallies = [0, 0, 0, 0]
     sum = 0.to_f
     questions.each do |question|
-      level = (question.response_from(self).code || 0).strip.to_i
+      level = (question.response_from(self).code || "0").strip.to_i
       tallies[level] += 1
       sum += 1
     end
