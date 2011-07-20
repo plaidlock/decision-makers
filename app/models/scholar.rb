@@ -83,7 +83,7 @@ class Scholar < User
     
     network_of_support = {}
     network_of_support[:total] = 0
-    response = question.response_from(self).code.split(',').collect{|r| r.strip.to_i}
+    response = (question.response_from(self) || "0,0,0,0,0,0").code.split(',').collect{|r| r.strip.to_i}
     %w(family school cbo peers others reasons).each_with_index do |category, i|
       network_of_support[category.to_sym] = response[i]
       network_of_support[:total] += response[i].to_i unless category == 'reasons'
@@ -109,7 +109,7 @@ class Scholar < User
     
     asset_cluster_analysis = []
     QuestionCategory.all.each do |question_category|
-      responses = question_category.responses_from(self)
+      responses = question_category.responses_from(self) || 0
       num_responses = responses.size.to_f
       asset_cluster_analysis << OpenStruct.new({:category => question_category.name, :value => responses.collect{|r| r.response.to_i}.inject(:+)/num_responses,  :color => question_category.color})
     end
@@ -124,7 +124,7 @@ class Scholar < User
     tallies = [0, 0, 0, 0]
     sum = 0.to_f
     questions.each do |question|
-      level = question.response_from(self).code.strip.to_i
+      level = (question.response_from(self).code || 0).strip.to_i
       tallies[level] += 1
       sum += 1
     end
