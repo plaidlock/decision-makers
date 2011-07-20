@@ -338,7 +338,7 @@
   		},
   		series: [
   		  {
-  		    data: [#{@reflective_decision_making.collect{|r| r.level*r.tallies}.inject(:+)}, #{@reflective_decision_making.collect{|r| r.tallies}.inject(:+)*3}],
+  		    data: [#{@reflective_decision_making.collect{|r| r.level*r.tallies}.inject(:+).round(1)}, #{(@reflective_decision_making.collect{|r| r.tallies}.inject(:+)*3).round(0)}],
   		    pointWidth: 75
   		  }
   		],
