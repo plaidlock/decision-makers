@@ -1,8 +1,6 @@
 = render 'admin/scholars/search'
 
 %h2= "Recent #{@profile.name}s"
-%p This is a listing of all starting point profiles that have not been coded. If you are looking for a specific Starting Point Profile, <a href="#{admin_scholars_path}">search for the Scholar</a>.
-
 %hr
 
 %table.striped
@@ -32,3 +30,5 @@
       %td= assignment.scholar.klass
       %td= assignment.completed.strftime('%m/%d/%Y')
       %td{:align => 'center'}= assignment.is_coded? ? '<font size="4">&#x2713;</font>'.html_safe : ''
+
+= paginate @assignments

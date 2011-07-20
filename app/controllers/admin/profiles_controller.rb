@@ -1,7 +1,8 @@
 class Admin::ProfilesController < Admin::ApplicationController
   def index
     @profile = Profile.find(params[:id])
-    @assignments = Assignment.recently_completed(@profile.id).includes(:scholar)
+    @assignments = Assignment.where(:profile_id => @profile.id).includes(:scholar).page(params[:page])
+    
     unless params[:klass_id].blank?
       @klass = Klass.find(params[:klass_id])
       @assignments = @assignments.where(:scholar_id => @klass.scholars)
