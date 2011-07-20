@@ -22,6 +22,10 @@ class Assignment < ActiveRecord::Base
     def recently_completed(profile, lim = 10)
       where(['assignments.profile_id = ? AND assignments.completed IS NOT NULL', profile]).order('assignments.completed DESC').limit(lim)
     end
+    
+    def completed
+      where('assignments.completed IS NOT NULL')
+    end
   end
   
   # instance methods
