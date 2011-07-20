@@ -52,7 +52,7 @@ snapshot1 = starting_point_profile.snapshots.create!(name:'Snapshot 1', subtitle
   <h3>My Network</h3>
 ', display_order:1)
 
-  snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', display_order:1, is_codeable:true)
+  snapshot1.questions.create!(question:'The <strong>key people</strong> on my journey are:', category:'My Supporters and My Reasons', question_number:1, display_order:1, is_codeable:true)
 
 
 
@@ -180,7 +180,7 @@ snapshot4 = starting_point_profile.snapshots.create!(name:'Snapshot 4', subtitle
 
   snapshot4.questions.create!(question:'One change I\'d like to make...', question_number:'1a', display_order:1, is_codeable:true)
   snapshot4.questions.create!(question:'Here are some steps I think I can take to make that change:', question_number:'1b', display_order:2, is_codeable:true)
-  snapshot4.questions.create!(question:'I will know I am starting to make progress when...', question_number:'1a', display_order:3, is_codeable:true)
+  snapshot4.questions.create!(question:'I will know I am starting to make progress when...', question_number:'1c', display_order:3, is_codeable:true)
   snapshot4.questions.create!(question:'A second change I\'d like to make...', question_number:'2a', display_order:4, is_codeable:true)
   snapshot4.questions.create!(question:'Here are some steps I think I can take to make that change:', question_number:'2b', display_order:5, is_codeable:true)
   snapshot4.questions.create!(question:'I will know I am starting to make progress when...', question_number:'2c', display_order:6, is_codeable:true)
