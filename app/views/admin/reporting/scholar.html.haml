@@ -45,7 +45,6 @@
         %td= "#{level.value}%"
   #reflective-decision-making-column-chart
 
-
 :javascript
   $(function(){
     createAssetAnalysis();
@@ -328,7 +327,7 @@
   		},
   		series: [
   		  {
-  		    data: [#{@reflective_decision_making.collect{|r| r.level.to_i*@reflective_decision_making.index(r)}.inject(:+)}, 42],
+  		    data: [#{@reflective_decision_making.collect{|r| r.level*r.tallies}.inject(:+)}, #{@reflective_decision_making.collect{|r| r.tallies}.inject(:+)*3}],
   		    pointWidth: 75
   		  }
   		],

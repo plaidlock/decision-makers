@@ -3,13 +3,17 @@
   %td
     <font size="-1"><strong>#{question.question.html_safe}</strong></font><br />
     = response.response
-  - if special
-    %td{:width => 350}
-      %table.striped-right
-        - %w(Family\ Supporters School\ Supporters CBO\ Supporters Peer\ Supporters Other\ Supporters Total\ Reasons).each_with_index do |value, i|
-          %tr
-            %th= value
-            %td= select_tag "responses[#{response.id}][#{i}]", options_for_select((0..10).to_a.collect{|i| [i,i]}, response.code.blank? ? nil : response.code.split(',')[i]), :style => 'min-width: 100px;', :include_blank => 'Choose...'
+  - unless question.snapshot.name == 'Snapshot 4' && question.snapshot.questions[0...2].include?(question)
+    - if special
+      %td{:width => 350}
+        %table.striped-right
+          - %w(Family\ Supporters School\ Supporters CBO\ Supporters Peer\ Supporters Other\ Supporters Total\ Reasons).each_with_index do |value, i|
+            %tr
+              %th= value
+              %td= select_tag "responses[#{response.id}][#{i}]", options_for_select((0..10).to_a.collect{|i| [i,i]}, response.code.blank? ? nil : response.code.split(',')[i]), :style => 'min-width: 100px;', :include_blank => 'Choose...'
 
+    - else
+      %td{:width => 50}= select_tag "responses[#{response.id}]", options_for_select((0..3).to_a.collect{|i| [i,i]}, response.code.blank? ? nil : response.code.to_i), :style => 'min-width: 50px;', :include_blank => true
   - else
-    %td{:width => '50px'}= select_tag "responses[#{response.id}]", options_for_select((0..3).to_a.collect{|i| [i,i]}, response.code.blank? ? nil : response.code.to_i), :style => 'min-width: 50px;', :include_blank => true
+    %td{:width => 50}
+      N/A

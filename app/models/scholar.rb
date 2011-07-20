@@ -58,10 +58,11 @@ class Scholar < User
       reflective_decision_makings.each do |reflective_decision_making|
         reflective_decision_making.each_with_index do |response, i|
           agg_reflective_decision_making[i].level += response.level
+          agg_reflective_decision_making[i].tallies += response.tallies
           agg_reflective_decision_making[i].value += response.value
         end
       end
-      agg_reflective_decision_making.each {|ardm| ardm.level = (ardm.level/num_scholars).round(1); ardm.value = (ardm.value/num_scholars).round(1)}
+      agg_reflective_decision_making.each {|ardm| ardm.level = (ardm.level/num_scholars).round(1); ardm.value = (ardm.value/num_scholars).round(1); ardm.tallies = (ardm.tallies/num_scholars).round(1)}
       
       return agg_network_of_support, agg_asset_analysis, agg_asset_cluster_analysis, agg_reflective_decision_making
     end
@@ -85,7 +86,7 @@ class Scholar < User
     response = question.response_from(self).code.split(',').collect{|r| r.strip.to_i}
     %w(family school cbo peers others reasons).each_with_index do |category, i|
       network_of_support[category.to_sym] = response[i]
-      network_of_support[:total] += response[i].to_i
+      network_of_support[:total] += response[i].to_i unless category == 'reasons'
     end
     
     return OpenStruct.new(network_of_support)
@@ -117,7 +118,8 @@ class Scholar < User
   end
   
   def reflective_decision_making(profile)
-    questions = profile.snapshot_2.questions + profile.snapshot_4.questions
+    # snapshots 2 & 4, but ignore the first 2 questions of snapshot 4
+    questions = profile.snapshot_2.questions + profile.snapshot_4.questions[2..-1]
     
     tallies = [0, 0, 0, 0]
     sum = 0.to_f
@@ -130,10 +132,8 @@ class Scholar < User
     reflective_decision_making = []
     colors = ['#303b13', '#993333', '#ffff9a', '#b3c98b']
     %w(None/No\ Fit Common\ Sense Supports\ Action Supports\ Reflective\ Reasoned\ Action).each_with_index do |name, i|
-      reflective_decision_making << OpenStruct.new({:name => name, :color => colors[i], :level => tallies[i], :value => ((tallies[i]/sum)*100).round(1)})
+      reflective_decision_making << OpenStruct.new({:name => name, :color => colors[i], :level => i, :tallies => tallies[i], :value => ((tallies[i]/sum)*100).round(1)})
     end
-    
-    p reflective_decision_making
 
     return reflective_decision_making
   end
