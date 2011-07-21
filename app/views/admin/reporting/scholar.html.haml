@@ -162,10 +162,7 @@
         text: '#{escape_javascript(@scholar.name)}'
       },
       xAxis: {
-        categories: #{@asset_cluster_analysis.collect{|qc| qc.category}},
-        title: {
-          text: null,
-        }
+        categories: #{@asset_cluster_analysis.collect{|qc| qc.category}}
       },
       yAxis: {
         allowDecimals: true,
