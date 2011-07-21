@@ -1,7 +1,7 @@
 %h2 Reporting
 
 = form_tag admin_aggregate_report_path do
-  %table.striped-right{:style => 'width: 465px'}
+  %table.striped-right{:style => 'width: 600px'}
     %tr
       %th{:width => 150} Class
       %td= select_tag 'class_id', options_for_select(Klass.all.collect{|k| [k.name, k.id]}), :include_blank => 'Select a class...'
