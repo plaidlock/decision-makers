@@ -3,7 +3,9 @@ class Admin::ReportingController < Admin::ApplicationController
   def scholars
     klass_scholar_ids = Klass.find(params[:klass_id]).scholars.collect{|s| s.id}    
     scholar_ids = Assignment.coded.where(:profile_id => params[:profile_id]).collect{|a| a.scholar_id}
-    @scholars = Scholar.select('users.id, users.first_name, users.last_name').where(:id => (scholar_ids & klass_scholar_ids))
+    @scholars = Scholar.where(:id => (scholar_ids & klass_scholar_ids)).includes(:school)
+    
+    @scholars = @scholars.collect{|s| {:id => s.id, :first_name => s.first_name, :last_name => s.last_name, :school => s.school.name}}
 
     render :json => @scholars
   end

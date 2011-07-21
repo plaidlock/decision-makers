@@ -30,7 +30,7 @@
     $.getJSON('#{admin_reporting_path('scholars')}?klass_id='+classId+'&profile_id='+profileId, function(data){
       students.html('Only scholars with coded profiles are shown:<br /><br />');
       $.each(data, function(i, value){
-        students.append('<label><input type="checkbox" name="scholar_ids[]" value="'+value.id+'" />'+value.first_name+' '+value.last_name+'</label><br />');
+        students.append('<label><input type="checkbox" name="scholar_ids[]" value="'+value.id+'" /><strong>'+value.first_name+' '+value.last_name+'</strong> - '+value.school+'</label><br />');
       });
     });
   }
