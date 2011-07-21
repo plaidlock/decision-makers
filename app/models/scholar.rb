@@ -12,7 +12,7 @@ class Scholar < User
 
   class << self
     def search(q, limit = 10)
-      self.where(['users.first_name LIKE ? OR users.last_name LIKE ?', "%#{q}%", "%#{q}%"]).limit(limit)
+      self.where(['users.first_name ILIKE ? OR users.last_name ILIKE ?', "%#{q}%", "%#{q}%"]).limit(limit)
     end
     
     def aggregate_report(profile, scholars)
