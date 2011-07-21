@@ -271,7 +271,7 @@ snapshot3 = check_point_profile.snapshots.create!(name:'Snapshot 3', subtitle:'W
 
 
   # default admin
-  #default_admin = Administrator.create!(username:'admin', password:'test', first_name:'Admin', last_name:'User')
+  default_admin = Administrator.create!(username:'admin', password:'test', first_name:'Admin', last_name:'User')
 
 
 =begin
