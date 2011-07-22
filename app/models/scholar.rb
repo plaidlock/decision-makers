@@ -130,7 +130,7 @@ class Scholar < User
     end
       
     reflective_decision_making = []
-    colors = ['#303b13', '#993333', '#ffff9a', '#b3c98b']
+    colors = ['#5f95c9', '#8d2e5e', '#ffffcc', '#bdeded']
     %w(None/No\ Fit Common\ Sense Supports\ Action Supports\ Reflective\ Reasoned\ Action).each_with_index do |name, i|
       reflective_decision_making << OpenStruct.new({:name => name, :color => colors[i], :level => i, :tallies => tallies[i], :value => ((tallies[i]/sum)*100).round(1)})
     end

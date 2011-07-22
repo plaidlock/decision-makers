@@ -1,9 +1,9 @@
 # question categories
-rwa = QuestionCategory.create!(name:'Relations with Adults', color:'#003366')
-aar = QuestionCategory.create!(name:'Agency and Responsibility', color:'#993333')
-aam = QuestionCategory.create!(name:'Attitudes and Motivation', color:'#ffff9a')
-pdm = QuestionCategory.create!(name:'Planning and Decision Making', color:'#b3c98b')
-dwo = QuestionCategory.create!(name:'Dealing with Others', color:'#303b13')
+rwa = QuestionCategory.create!(name:'Relations with Adults', color:'#5f95c9')
+aar = QuestionCategory.create!(name:'Agency and Responsibility', color:'#8d2e5e')
+aam = QuestionCategory.create!(name:'Attitudes and Motivation', color:'#ffffcc')
+pdm = QuestionCategory.create!(name:'Planning and Decision Making', color:'#bdeded')
+dwo = QuestionCategory.create!(name:'Dealing with Others', color:'#660066')
 
 # tips
 specifics = Tip.create!(title:'Specifics', content:'details and actions')
