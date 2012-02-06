@@ -24,19 +24,19 @@ strong {
   background: #000 url('/images/header.jpg') no-repeat;
   height: 180px;
   width: 740px;
-  
+
   h1 {
     display: none;
   }
-  
+
   ul#public_nav {
     float: right;
     position: relative;
     top: 100px;
-    
+
     li {
       float: left;
-      
+
       a {
         border-left: 1px solid $dark-blue;
         color: $dark-blue;
@@ -44,18 +44,18 @@ strong {
         font-weight: bold;
         padding: 0 5px;
         text-decoration: none;
-        
+
         &:hover {
           text-decoration: underline;
         }
       }
-      
+
       &:first-child {
         a {
           border: none;
         }
       }
-      
+
       &:last-child {
         a {
           padding-right: 10px;
@@ -68,45 +68,47 @@ strong {
 #wrapper {
   margin: 0 auto;
   width: 740px;
-  
+
   #content {
     background: #fff url('/images/background.jpg') repeat-y;
+    min-height: 375px;
+    position: relative;
     width: 740px;
-    
+
     #inner {
       float: right;
       padding: 10px;
       margin: -50px 0 0 130px;
       width: 595px;
     }
-    
+
     a {
       color: $blue;
       font-weight: bold;
       text-decoration: underline;
-      
+
       &:hover {
         color: $dark-blue;
       }
     }
-    
+
     ul {
       margin: 10px 20px;
-      
+
       li {
         margin: 0 0 0 20px;
       }
     }
-    
+
     ol {
       list-style-type: decimal;
       margin: 10px 20px;
-      
+
       li {
         margin: 0 0 0 20px;
       }
     }
-    
+
     ul.pencil li {
       list-style-image: url('/images/pencil.gif');
     }
@@ -162,7 +164,7 @@ form {
 //
 #steps {
   margin-top: 20px;
-  
+
   li a {
     display: block;
     float: left;
@@ -170,14 +172,34 @@ form {
     height: 91px;
     width: 73px;
   }
-  
+
   @for $i from 1 through 7 {
     #step-#{$i} {
       background: url('/images/steps/#{$i}.gif') no-repeat;
-      
+
       &:hover {
         background: url('/images/steps/#{$i}-down.gif') no-repeat;
       }
+    }
+  }
+}
+
+ul#side-steps {
+  float: left;
+  left: -20px;
+  position: absolute;
+
+  li {
+    a {
+      color: $dark-blue !important;
+      display: block;
+      font-weight: bold;
+      margin-top: 20px;
+      text-decoration: none !important;
+    }
+
+    span {
+      color: $blue;
     }
   }
 }
@@ -186,7 +208,7 @@ table#overview {
   h3 {
     font-size: 14px;
   }
-  
+
   tr td {
     padding: 0 0 15px 0;
     vertical-align: top;

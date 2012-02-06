@@ -4,7 +4,7 @@ class CreateSchools < ActiveRecord::Migration
       t.string :name
       t.boolean :is_active, :default => true
     end
-    
+
     add_index :schools, :name
   end
 

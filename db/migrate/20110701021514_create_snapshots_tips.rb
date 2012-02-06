@@ -4,7 +4,7 @@ class CreateSnapshotsTips < ActiveRecord::Migration
       t.integer :snapshot_id
       t.integer :tip_id
     end
-    
+
     add_index :snapshots_tips, :snapshot_id
     add_index :snapshots_tips, :tip_id
   end

@@ -1,5 +1,5 @@
 /*
-  http://meyerweb.com/eric/tools/css/reset/ 
+  http://meyerweb.com/eric/tools/css/reset/
   v2.0 | 20110126
   License: none (public domain)
 */
@@ -74,6 +74,8 @@ strong {
   width: 740px; }
   #wrapper #content {
     background: white url("/images/background.jpg") repeat-y;
+    min-height: 375px;
+    position: relative;
     width: 740px; }
     #wrapper #content #inner {
       float: right;
@@ -162,6 +164,19 @@ form table tr td {
     background: url("/images/steps/7.gif") no-repeat; }
     #steps #step-7:hover {
       background: url("/images/steps/7-down.gif") no-repeat; }
+
+ul#side-steps {
+  float: left;
+  left: -20px;
+  position: absolute; }
+  ul#side-steps li a {
+    color: #003366 !important;
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: none !important; }
+  ul#side-steps li span {
+    color: #6a81a1; }
 
 table#overview h3 {
   font-size: 14px; }

@@ -1,0 +1,22 @@
+%ul#side-steps
+  %li
+    = link_to 'Step 1', step_path('starting-point-profile'), :id => 'step-1'
+    %span Start Journey
+  %li
+    = link_to 'Step 2', step_path('journey-book-info'), :id => 'step-2'
+    %span Journey Book
+  %li
+    = link_to 'Step 3', step_path('journey-book-chapter-1'), :id => 'step-3'
+    %span Introduction
+  %li
+    = link_to 'Step 4', step_path('journey-book-chapter-2'), :id => 'step-4'
+    %span Portrait
+  %li
+    = link_to 'Step 5', step_path('journey-book-chapter-3'), :id => 'step-5'
+    %span Action Plan
+  %li
+    = link_to 'Step 6', step_path('journey-book-contents'), :id => 'step-6'
+    %span Portfolio
+  %li
+    = link_to 'Step 7', profile_path(Profile::CPP), :id => 'step-7'
+    %span Assess

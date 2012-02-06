@@ -52,7 +52,7 @@
     createReflectiveDecisionMakingPie();
     createReflectiveDecisionMakingColumn();
   });
-  
+
   function createAssetAnalysis() {
     Highcharts.setOptions({
       colors: #{@asset_analysis.collect{|q| q.color}.insert(0, '#000')}
@@ -103,47 +103,47 @@
         enabled: false
       },
       plotOptions: {
-  			bar: {
-  				dataLabels: {
-  					enabled: true,
-  					style: {
-  					  'font-weight': 'bold'
-  					}
-  				}
-  			},
-  			series: {
-  			  colorByPoint: true
-  			}
-  		},
-  		series: [
-  		  {
-  		    data: #{@asset_analysis.collect{|q| q.response}},
-  		    pointWidth: 20
-  		  }
-  		],
-  		exporting: {
-  		  buttons: {
-    		  exportButton: {
+        bar: {
+          dataLabels: {
+            enabled: true,
+            style: {
+              'font-weight': 'bold'
+            }
+          }
+        },
+        series: {
+          colorByPoint: true
+        }
+      },
+      series: [
+        {
+          data: #{@asset_analysis.collect{|q| q.response}},
+          pointWidth: 20
+        }
+      ],
+      exporting: {
+        buttons: {
+          exportButton: {
             menuItems: null,
             onclick: function() {
               this.exportChart();
             }
           },
-  		    printButton: {
-    		    enabled: false
-    		  }
-  		  },
-  		  filename: '#{escape_javascript(@scholar.name.parameterize+'-asset-analysis-'+Time.now.to_i.to_s)}',
-  		  type: 'application/pdf'
-  		}
+          printButton: {
+            enabled: false
+          }
+        },
+        filename: '#{escape_javascript(@scholar.name.parameterize+'-asset-analysis-'+Time.now.to_i.to_s)}',
+        type: 'application/pdf'
+      }
     });
   }
-  
+
   function createAssetClusterAnalysis() {
     Highcharts.setOptions({
       colors: #{@asset_cluster_analysis.collect{|q| q.color}.insert(0, '#000')}
     });
-    
+
     var asset_analysis = new Highcharts.Chart({
       chart: {
         plotBackgroundColor: '#eeeeee',
@@ -151,7 +151,7 @@
         spacingLeft: 25,
         spacingRight: 25,
         type: 'bar'
-      }, 
+      },
       credits: {
         enabled: false
       },
@@ -179,47 +179,47 @@
         enabled: false
       },
       plotOptions: {
-  			bar: {
-  				dataLabels: {
-  					enabled: true,
-  					style: {
-  					  'font-weight': 'bold'
-  					}
-  				}
-  			},
-  			series: {
-  			  colorByPoint: true
-  			}
-  		},
-  		series: [
-  		  {
-  		    data: #{@asset_cluster_analysis.collect{|qc| qc.value}},
-  		    pointWidth: 20
-  		  }
-  		],
-  		exporting: {
-  		  buttons: {
-    		  exportButton: {
+        bar: {
+          dataLabels: {
+            enabled: true,
+            style: {
+              'font-weight': 'bold'
+            }
+          }
+        },
+        series: {
+          colorByPoint: true
+        }
+      },
+      series: [
+        {
+          data: #{@asset_cluster_analysis.collect{|qc| qc.value}},
+          pointWidth: 20
+        }
+      ],
+      exporting: {
+        buttons: {
+          exportButton: {
             menuItems: null,
             onclick: function() {
               this.exportChart();
             }
           },
-  		    printButton: {
-    		    enabled: false
-    		  }
-  		  },
-  		  filename: '#{escape_javascript(@scholar.name.parameterize+'-asset-cluster-analysis-'+Time.now.to_i.to_s)}',
-  		  type: 'application/pdf'
-  		}
+          printButton: {
+            enabled: false
+          }
+        },
+        filename: '#{escape_javascript(@scholar.name.parameterize+'-asset-cluster-analysis-'+Time.now.to_i.to_s)}',
+        type: 'application/pdf'
+      }
     });
   }
-  
+
   function createReflectiveDecisionMakingPie() {
     Highcharts.setOptions({
       colors: #{@reflective_decision_making.collect{|r| r.color}}
     });
-    
+
     var asset_analysis = new Highcharts.Chart({
       chart: {
         renderTo: 'reflective-decision-making-pie-chart',
@@ -239,8 +239,8 @@
           dataLabels: {
             enabled: true,
             style: {
-  					  'font-weight': 'bold'
-  					}
+              'font-weight': 'bold'
+            }
           },
           showInLegend: true
         }
@@ -256,35 +256,35 @@
         }
       ],
       exporting: {
-  		  buttons: {
-    		  exportButton: {
+        buttons: {
+          exportButton: {
             menuItems: null,
             onclick: function() {
               this.exportChart();
             }
           },
-  		    printButton: {
-    		    enabled: false
-    		  }
-  		  },
-  		  filename: '#{escape_javascript(@scholar.name.parameterize+'-reflective-decision-making-pie-'+Time.now.to_i.to_s)}',
-  		  type: 'application/pdf'
-  		}
+          printButton: {
+            enabled: false
+          }
+        },
+        filename: '#{escape_javascript(@scholar.name.parameterize+'-reflective-decision-making-pie-'+Time.now.to_i.to_s)}',
+        type: 'application/pdf'
+      }
     });
   }
-  
+
   function createReflectiveDecisionMakingColumn() {
     Highcharts.setOptions({
       colors: #{@asset_cluster_analysis.collect{|q| q.color}.insert(0, '#000')}
     });
-    
+
     var asset_analysis = new Highcharts.Chart({
       chart: {
         plotBackgroundColor: '#eeeeee',
         renderTo: 'reflective-decision-making-column-chart',
         type: 'column',
         width: 400
-      }, 
+      },
       credits: {
         enabled: false
       },
@@ -314,38 +314,38 @@
         enabled: false
       },
       plotOptions: {
-  			column: {
-  				dataLabels: {
-  					enabled: true,
-  					style: {
-  					  'font-weight': 'bold'
-  					}
-  				}
-  			},
-  			series: {
-  			  colorByPoint: true
-  			}
-  		},
-  		series: [
-  		  {
-  		    data: [#{@reflective_decision_making.collect{|r| r.level*r.tallies}.inject(:+)}, #{@reflective_decision_making.collect{|r| r.tallies}.inject(:+)*3}],
-  		    pointWidth: 75
-  		  }
-  		],
-  		exporting: {
-  		  buttons: {
-    		  exportButton: {
+        column: {
+          dataLabels: {
+            enabled: true,
+            style: {
+              'font-weight': 'bold'
+            }
+          }
+        },
+        series: {
+          colorByPoint: true
+        }
+      },
+      series: [
+        {
+          data: [#{@reflective_decision_making.collect{|r| r.level*r.tallies}.inject(:+)}, #{@reflective_decision_making.collect{|r| r.tallies}.inject(:+)*3}],
+          pointWidth: 75
+        }
+      ],
+      exporting: {
+        buttons: {
+          exportButton: {
             menuItems: null,
             onclick: function() {
               this.exportChart();
             }
           },
-  		    printButton: {
-    		    enabled: false
-    		  }
-  		  },
-  		  filename: '#{escape_javascript(@scholar.name.parameterize+'-reflective-decision-making-bar-'+Time.now.to_i.to_s)}',
-  		  type: 'application/pdf'
-  		}
+          printButton: {
+            enabled: false
+          }
+        },
+        filename: '#{escape_javascript(@scholar.name.parameterize+'-reflective-decision-making-bar-'+Time.now.to_i.to_s)}',
+        type: 'application/pdf'
+      }
     });
   }

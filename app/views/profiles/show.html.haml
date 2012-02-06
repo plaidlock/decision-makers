@@ -9,7 +9,7 @@
         %h2= snapshot.name
         %h3= snapshot.subtitle
         .snapshot_text= snapshot.text.html_safe
-      
+
         - snapshot.grouped_questions.each_pair do |category, questions|
           - if questions.first.is_codeable?
             = render :partial => 'codeable_question', :locals => {:category => category, :questions => questions}
@@ -23,7 +23,7 @@
     padding: 10px;
     width: 250px;
   }
-  
+
   table {
     margin: 0 auto;
     width: 500px;

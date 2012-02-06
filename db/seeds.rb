@@ -25,11 +25,11 @@ starting_point_profile = Profile.create!(name:'Starting Point Profile', text:'
   <p>
     This Starting Point Profile will let you take 4 snapshots of your current situation:
   </p>
-  <ul> 
-    <li><strong>Your Network</strong> &mdash; Who is traveling with you?</li> 
-    <li><strong>Your Goals</strong> &mdash; What are you working on in your life now?</li> 
-    <li><strong>Your Assets</strong> &mdash; What is your situation?</li> 
-    <li><strong>Your Changes</strong> &mdash; A letter to yourself</li> 
+  <ul>
+    <li><strong>Your Network</strong> &mdash; Who is traveling with you?</li>
+    <li><strong>Your Goals</strong> &mdash; What are you working on in your life now?</li>
+    <li><strong>Your Assets</strong> &mdash; What is your situation?</li>
+    <li><strong>Your Changes</strong> &mdash; A letter to yourself</li>
   </ul>
 ')
 
@@ -42,7 +42,7 @@ snapshot1 = starting_point_profile.snapshots.create!(name:'Snapshot 1', subtitle
     And what is your reason for naming them?  That is, what do they contribute to your network of support?  (Are they role models, mentors, people who challenge you?  Can you turn to them for inspiration, practical advice, recommendations, to learn how to...)?
   </p>
   <ul class="pencil">
-    <li> 
+    <li>
       Write their <strong>names</strong> and <strong>relationship</strong> to you here (e.g., Ms. Jones, my community project contact).
     </li>
     <li>
@@ -63,9 +63,8 @@ snapshot2 = starting_point_profile.snapshots.create!(name:'Snapshot 2', subtitle
   <p>
     What is important to you at this point in your life?  Think for a moment about some things that matter to you. Think about things you care about, feel committed to, or may even be struggling with in five areas: education, relationships, money, recreation, and health. (The TIPS on the left border will help you create a more complete and reflective picture of yourself.)
   </p>
-  
   <ul class="pencil">
-    <li> 
+    <li>
       Try to name the values, goals, or problems you are working on in your everyday life.
     </li>
     <li>
@@ -112,13 +111,13 @@ snapshot3 = starting_point_profile.snapshots.create!(name:'Snapshot 3', subtitle
     So what is <strong>your situation</strong>? Answering these questions will help you figure which assets are there for you - and which ones you might want to develop.
   </p>
   <ul class="pencil">
-    <li> 
+    <li>
       How well does each of the following situations or descriptions <strong>fit</strong> - or <strong>not fit</strong> - you?
     </li>
   </ul>
-  <table width="100%" cellspacing="5" class="rating"> 
-    <tr> 
-      <td width="25%" align="center"> 
+  <table width="100%" cellspacing="5" class="rating">
+    <tr>
+      <td width="25%" align="center">
         <font color="#933"><strong>Not My Situation</strong></font>
         I don\'t think so. Doesn\'t seem like my situation.
       </td>
@@ -126,11 +125,11 @@ snapshot3 = starting_point_profile.snapshots.create!(name:'Snapshot 3', subtitle
         <font color="#933"><strong>Sort Of Fits</strong></font>
         Maybe that\'s sort of true for me sometimes. But not very much.
       </td>
-      <td width="25%" align="center"> 
+      <td width="25%" align="center">
         <font color="#933"><strong>Fits Pretty Well</strong></font>
         Yes, this describes my situation pretty well, most of the time.
       </td>
-      <td width="25%" align="center"> 
+      <td width="25%" align="center">
         <font color="#933"><strong>Strongly Fits</strong></font>
         Definitely. This is strongly true in my situation.
       </td>
@@ -280,9 +279,7 @@ snapshot3 = check_point_profile.snapshots.create!(name:'Snapshot 3', subtitle:'W
   .
   .
   .
-  
     Development stuff only follows
-  
   .
   .
   .
@@ -294,7 +291,7 @@ if Rails.env.development?
   # make a default school
   School.create!(name:'Fox Chapel')
   School.create!(name:'Swickley')
-  
+
   # create some klasses
   Klass.create!(name:'Class of 2014', default_password:'spring2014')
   Klass.create!(name:'Class of 2015', default_password:'spring2015')
@@ -303,10 +300,10 @@ if Rails.env.development?
   Klass.create!(name:'Class of 2018', default_password:'spring2018')
   Klass.create!(name:'Class of 2019', default_password:'spring2019')
   Klass.create!(name:'Class of 2020', default_password:'spring2020')
-  
+
   # make a default scholar
   default_scholar = Scholar.create!(school:School.find(1), klass:Klass.find(1), username:'user', password:'test', first_name:'Default', last_name:'Scholar', birthdate:Time.new, grade:11)
-  
+
   70.times do |i|
     name = Faker::Name.name
 
@@ -320,7 +317,7 @@ if Rails.env.development?
     s.birthdate = Time.new
     s.grade = 10
     s.save!
-    
+
     # now complete all, code half of the starting point profiles
     starting_point_profile.questions.each do |question|
       if question.is_codeable?
@@ -330,7 +327,7 @@ if Rails.env.development?
       end
     end
     s.assignments.find_by_profile_id(starting_point_profile.id).update_attributes(:completed => Time.now)
-    
+
     if i%2 == 0
       starting_point_profile.questions.each_with_index do |question, i|
         if question.is_codeable?
@@ -341,7 +338,7 @@ if Rails.env.development?
           end
         end
       end
-      
+
       s.assignments.find_by_profile_id(starting_point_profile.id).update_attributes(:is_coded => true)
     end
   end

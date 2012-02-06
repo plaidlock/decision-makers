@@ -8,7 +8,7 @@ class CreateAssignments < ActiveRecord::Migration
       t.datetime :started, :default => nil
       t.datetime :completed, :default => nil
     end
-    
+
     add_index :assignments, :scholar_id
     add_index :assignments, :profile_id
   end

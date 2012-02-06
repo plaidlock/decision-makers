@@ -4,11 +4,11 @@ $(function(){
     scrolling: 'no',
     overlayOpacity: 0.3
   });
-  
+
   $('tr.clickable').click(function(){
     window.location.href = $(this).data('href');
   });
-  
+
   $('#scholar-search').autocomplete({
     source: function(request, response) {
       $.ajax({
@@ -22,7 +22,7 @@ $(function(){
             return {
               label: item.last_name + ', ' + item.first_name,
               value: item.last_name + ', ' + item.first_name,
-              id: item.id 
+              id: item.id
             }
           }));
         }
@@ -34,7 +34,7 @@ $(function(){
       window.location.href = url;
     }
   });
-  
+
   addNavCurrentClasses();
 });
 
@@ -54,8 +54,7 @@ function paginateSnapshots() {
     submitButton.type = 'submit';
     submitButton.value = 'Submit Profile';
     submitButton.style.width = '100%';
-  
-  
+
   for(var i = 0; i < snapshots.length; i++) {
     if(i !== 0) {
       // add a previous button
@@ -71,7 +70,7 @@ function paginateSnapshots() {
       }
       snapshots[i].appendChild(button);
     }
-    
+
     if(i !== snapshots.length-1) {
       // add a next button
       var button = document.createElement('input');
@@ -88,24 +87,23 @@ function paginateSnapshots() {
       }
       snapshots[i].appendChild(button);
     }
-    
+
     var div = document.createElement('div');
     div.className = 'clear';
     snapshots[i].appendChild(div);
   }
-  
+
   snapshots[snapshots.length-1].appendChild(submitButton);
-  
   snapshots[0].style.display = 'block';
 }
 
 function validateSection(section) {
   var formItems = section.find('textarea, select');
   var errors = false;
-  
+
   for(var i = 0; i < formItems.length; i++) {
     var currentItem = formItems[i];
-    
+
     if(currentItem.type === 'textarea') {
       if(currentItem.value === null || currentItem.value === '') {
         errors = true;
@@ -140,7 +138,7 @@ function validateSection(section) {
       }
     }
   }
-  
+
   if(errors === true) {
     alert('You have incomplete fields. Please fill in the fields marked in red to continue.');
   }

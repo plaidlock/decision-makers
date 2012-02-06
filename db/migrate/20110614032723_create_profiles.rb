@@ -4,7 +4,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :name
       t.text :text
     end
-    
+
     add_index :profiles, :name
   end
 

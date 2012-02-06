@@ -24,16 +24,16 @@
     %tr
       %th school:
       %td= f.select :school_id, School.all.collect{|s| [s.name, s.id]}, :include_blank => 'Select School...'
-  
+
   = f.submit :class => 'button', :style => 'width: 485px'
 
-:javascript  
+:javascript
   $('#scholar_username').focus(function(){
     var first_name = $('#scholar_first_name').val().toLowerCase();
     var last_name = $('#scholar_last_name').val().toLowerCase();
     $(this).val(first_name[0]+last_name);
   });
-  
+
   $('#scholar_klass_id').change(function(){
     var password = $(this).find(':selected').data('password');
     $('#scholar_password').val(password);

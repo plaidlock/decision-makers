@@ -2,7 +2,7 @@ class Admin::ProfilesController < Admin::ApplicationController
   def index
     @profile = Profile.find(params[:id])
     @assignments = Assignment.completed.where(:profile_id => @profile.id).includes(:scholar)
-    
+
     unless params[:klass_id].blank?
       @klass = Klass.find(params[:klass_id])
       @assignments = @assignments.where(:scholar_id => @klass.scholars)
@@ -11,7 +11,7 @@ class Admin::ProfilesController < Admin::ApplicationController
       @school = School.find(params[:school_id])
       @assignments = @assignments.where(:scholar_id => @school.scholars)
     end
-    
+
     @assignments = @assignments.page(params[:page]).per(10)
     @assignments.sort!{|a,b| a.scholar.last_name <=> b.scholar.last_name}
   end
@@ -21,12 +21,12 @@ class Admin::ProfilesController < Admin::ApplicationController
     @profile = Profile.find(params[:id])
     @assignment = @scholar.assignments.find_by_profile_id!(params[:id])
   end
-  
+
   def code
     @scholar = Scholar.find(params[:scholar_id])
     @profile = Profile.find(params[:profile_id])
     @assignment = @scholar.assignments.find_by_profile_id!(params[:profile_id])
-    
+
     begin
       Response.transaction do
         params[:responses].each_pair do |response_id, value|
@@ -45,10 +45,10 @@ class Admin::ProfilesController < Admin::ApplicationController
       end
       return render :action => 'show'
     end
-    
+
     @assignment.is_coded = true
     @assignment.save!
-    
+
     redirect_to admin_scholar_profile_path(@scholar, @profile), :notice => 'Profile was coded!'
   end
 end

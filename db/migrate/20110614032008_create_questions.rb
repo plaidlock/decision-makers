@@ -8,7 +8,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :display_order, :default => nil
       t.boolean :is_codeable, :default => false
     end
-    
+
     add_index :questions, :snapshot_id
     add_index :questions, :category
     add_index :questions, :question_category_id

@@ -2,18 +2,18 @@ class Admin::AdministratorsController < Admin::ApplicationController
   def index
     @administrators = Administrator.page(params[:page] || 0).per(25)
   end
-  
+
   def show
     @administrator = Administrator.find(params[:id])
   end
-  
+
   def new
     @administrator = Administrator.new
   end
-  
+
   def create
     @administrator = Administrator.new(params[:administrator])
-    
+
     if @administrator.save
       redirect_to admin_administrators_path, :notice => 'Administrator was created!'
     else
@@ -21,14 +21,14 @@ class Admin::AdministratorsController < Admin::ApplicationController
       render :action => 'new'
     end
   end
-  
+
   def edit
     @administrator = Administrator.find(params[:id])
   end
-  
+
   def update
     @administrator = Administrator.find(params[:id])
-    
+
     if @administrator.update_attributes(params[:administrator])
       redirect_to admin_administrator_path(@administrator), :notice => 'Administrator was updated!'
     else
@@ -36,10 +36,10 @@ class Admin::AdministratorsController < Admin::ApplicationController
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @administrator = Administrator.find(params[:id])
-    
+
     if @administrator.update_attributes(:is_active => false)
       redirect_to admin_administrators_path, :notice => 'Administrator was deleted!'
     else

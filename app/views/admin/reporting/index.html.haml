@@ -21,12 +21,12 @@
       getResults();
     });
   });
-  
+
   function getResults() {
     var classId = $('#class_id').val();
     var profileId = $('#profile_id').val();
     var students = $('#students');
-    
+
     $.getJSON('#{admin_reporting_path('scholars')}?klass_id='+classId+'&profile_id='+profileId, function(data){
       students.html('Only scholars with coded profiles are shown:<br /><br />');
       $.each(data, function(i, value){
