@@ -1,9 +1,5 @@
 /*
-<<<<<<< HEAD
-  http://meyerweb.com/eric/tools/css/reset/ 
-=======
   http://meyerweb.com/eric/tools/css/reset/
->>>>>>> fixing sidebar
   v2.0 | 20110126
   License: none (public domain)
 */
@@ -16,11 +12,7 @@
   blockquote,q{quotes:none;}
   blockquote:before,blockquote:after,
   q:before,q:after{content:'';content:none;}
-<<<<<<< HEAD
-  table{border-collapse:collapse;border-spacing:0;} 
-=======
   table{border-collapse:collapse;border-spacing:0;}
->>>>>>> fixing sidebar
 }
 
 @mixin opacity($alpha) {
@@ -50,29 +42,21 @@
     background: -moz-linear-gradient(top, $start 0%, $stop 100%);
     background: -ms-linear-gradient(top, $start 0%, $stop 100%);
     background: -o-linear-gradient(top, $start 0%, $stop 100%);
-<<<<<<< HEAD
-    background: -webkit-gradient(linear, left top, left bottom, from($start), to($stop)); 
-    background: -webkit-linear-gradient(top, $start 0%, $stop 100%);
-    background: linear-gradient(top, $start 0%, $stop 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$startFF, endColorstr=$stopFF);
-  	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$start}FF, endColorstr=#{$stop}FF)";
-=======
     background: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
     background: -webkit-linear-gradient(top, $start 0%, $stop 100%);
     background: linear-gradient(top, $start 0%, $stop 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$startFF, endColorstr=$stopFF);
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$start}FF, endColorstr=#{$stop}FF)";
->>>>>>> fixing sidebar
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$start}FF, endColorstr=#{$stop}FF)";
   }
   @if $type == 'horizontal' {
     background: -moz-linear-gradient(top left, $start, $stop);
     background: -ms-linear-gradient(top left, $start, $stop);
     background: -o-linear-gradient(top left, $start, $stop);
-		background: -webkit-gradient(linear, left top, right top, from($start), to($stop));
+    background: -webkit-gradient(linear, left top, right top, from($start), to($stop));
     background: -webkit-linear-gradient(top left, $start, $stop);
-		background: linear-gradient(top left, $start, $stop);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startFF, endColorStr=$stopFF, GradientType=1);
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$start}FF, endColorstr=#{$start}FF, GradientType=1)";
+    background: linear-gradient(top left, $start, $stop);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startFF, endColorStr=$stopFF, GradientType=1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$start}FF, endColorstr=#{$start}FF, GradientType=1)";
   }
 }
 
