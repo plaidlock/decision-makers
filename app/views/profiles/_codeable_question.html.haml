@@ -8,4 +8,4 @@
     %td
       = "<font size=\"3\">#{question.question}</font>".html_safe
       %br
-        = text_area_tag "questions[#{question.id}]", ''
+        = text_area_tag "questions[#{question.id}]", current_user.responses.find_by_question_id(question.id).try(:response)

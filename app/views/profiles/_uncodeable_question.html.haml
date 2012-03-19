@@ -4,4 +4,4 @@
       %td
         %strong= "<font size=\"3\">#{question.question}</font>".html_safe
       %td{:align => 'right'}
-        = select_tag "questions[#{question.id}]", options_for_select(Question::NON_CODEABLE_OPTIONS)
+        = select_tag "questions[#{question.id}]", options_for_select(Question::NON_CODEABLE_OPTIONS, current_user.responses.find_by_question_id(question.id).try(:response))

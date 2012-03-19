@@ -251,7 +251,12 @@ table#overview {
 //
 .snapshot {
   display: none;
+
+  .partial-submit-button {
+    margin-left: 150px;
+  }
 }
+
 
 #tips {
   float: left;

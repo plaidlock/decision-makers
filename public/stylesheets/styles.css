@@ -210,6 +210,8 @@ table#overview tr td {
 
 .snapshot {
   display: none; }
+  .snapshot .partial-submit-button {
+    margin-left: 150px; }
 
 #tips {
   float: left;

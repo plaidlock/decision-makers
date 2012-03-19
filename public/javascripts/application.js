@@ -86,6 +86,14 @@ function paginateSnapshots() {
         }
       }
       snapshots[i].appendChild(button);
+
+      // add partially complete button
+      var partialSubmit = document.createElement('input');
+      partialSubmit.name = 'partial_submit'
+      partialSubmit.type = 'submit';
+      partialSubmit.value = 'Save and Continue Later';
+      partialSubmit.className += 'partial-submit-button';
+      snapshots[i].appendChild(partialSubmit);
     }
 
     var div = document.createElement('div');

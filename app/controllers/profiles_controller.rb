@@ -24,16 +24,23 @@ class ProfilesController < ApplicationController
     Response.transaction do
       # params[:questions] is a question_id => value hash
       params[:questions].each_pair do |question_id, response|
-        current_user.responses.create!(question_id:question_id, response:response)
+        unless response.blank?
+          r = current_user.responses.find_or_initialize_by_question_id(question_id:question_id)
+          r.response = response
+          r.save!
+        end
       end
     end
 
-    # mark the assignment as being completed
-    @assignment.completed = Time.now
-    @assignment.save!
+    # mark the assignment as being completed iff they didn't save later
+    unless params[:partial_submit].present?
+      flash[:notice] = "You have completed the #{@profile.name}. Please proceed to the next step."
+      @assignment.completed = Time.now
+      @assignment.save!
+    else
+      flash[:notice] = "You have started your #{@profile.name}. You can return to this page to finish it at a later time."
+    end
 
-    # give some informative information
-    flash[:notice] = "You have completed the #{@profile.name}. Please proceed to the next step."
     redirect_to step_path
   end
 end
